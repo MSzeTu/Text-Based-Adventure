@@ -22,7 +22,7 @@ namespace SzeTuM_HW
 			//Start Game, ask if they want to play game. 
 			Console.Write("Would you like to play the Hatsquid's Great and Wonderful Tower?");
 			PlayGame = Console.ReadLine();
-			if (PlayGame.Substring(0,1) == "Y")
+			if (PlayGame.Substring(0,1) == "Y" || PlayGame.Substring(0, 1) == "y")
 			{
 				Console.WriteLine("Alright then, lets goooooooooooo!");
 			}
