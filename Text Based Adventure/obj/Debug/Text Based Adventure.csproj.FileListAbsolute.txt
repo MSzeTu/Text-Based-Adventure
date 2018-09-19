@@ -1,0 +1,14 @@
+D:\Profiles\ms1937\source\repos\Text Based Adventure\Text Based Adventure\bin\Debug\Text Based Adventure.exe.config
+D:\Profiles\ms1937\source\repos\Text Based Adventure\Text Based Adventure\bin\Debug\Text Based Adventure.exe
+D:\Profiles\ms1937\source\repos\Text Based Adventure\Text Based Adventure\bin\Debug\Text Based Adventure.pdb
+D:\Profiles\ms1937\source\repos\Text Based Adventure\Text Based Adventure\obj\Debug\Text Based Adventure.csprojAssemblyReference.cache
+D:\Profiles\ms1937\source\repos\Text Based Adventure\Text Based Adventure\obj\Debug\Text Based Adventure.csproj.CoreCompileInputs.cache
+D:\Profiles\ms1937\source\repos\Text Based Adventure\Text Based Adventure\obj\Debug\Text Based Adventure.exe
+D:\Profiles\ms1937\source\repos\Text Based Adventure\Text Based Adventure\obj\Debug\Text Based Adventure.pdb
+C:\Users\drago\Downloads\Game_Dev\Sze-Tu'sText Based Adventure\Text Based Adventure\bin\Debug\Text Based Adventure.exe.config
+C:\Users\drago\Downloads\Game_Dev\Sze-Tu'sText Based Adventure\Text Based Adventure\bin\Debug\Text Based Adventure.exe
+C:\Users\drago\Downloads\Game_Dev\Sze-Tu'sText Based Adventure\Text Based Adventure\bin\Debug\Text Based Adventure.pdb
+C:\Users\drago\Downloads\Game_Dev\Sze-Tu'sText Based Adventure\Text Based Adventure\obj\Debug\Text Based Adventure.csprojAssemblyReference.cache
+C:\Users\drago\Downloads\Game_Dev\Sze-Tu'sText Based Adventure\Text Based Adventure\obj\Debug\Text Based Adventure.csproj.CoreCompileInputs.cache
+C:\Users\drago\Downloads\Game_Dev\Sze-Tu'sText Based Adventure\Text Based Adventure\obj\Debug\Text Based Adventure.exe
+C:\Users\drago\Downloads\Game_Dev\Sze-Tu'sText Based Adventure\Text Based Adventure\obj\Debug\Text Based Adventure.pdb
