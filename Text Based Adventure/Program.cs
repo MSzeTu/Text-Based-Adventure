@@ -7,7 +7,7 @@ using System.Threading.Tasks;
  * Class: IGME105
  * Author: Matthew Sze-Tu
  * Purpose: Create a text-based adventure
- * Recent Changes: Added start of game question and initial steps towards tower. 
+ * Recent Changes: Added door roll, trimed name, parsed steps. 
  */
 namespace SzeTuM_HW
 {
@@ -15,6 +15,10 @@ namespace SzeTuM_HW
 	{
 		static void Main(string[] args)
 		{
+			const String Colors = "Red,Blue,Pink,Gray,Purple,Aquamarine,Gold,Silver";
+			String ThirdColor;
+			int CLocation;
+			int CLength;
 			String PlayGame;
 			String PlayerName;
 			const int PathDistance = 50;
@@ -55,13 +59,20 @@ namespace SzeTuM_HW
 			Console.WriteLine("You stand at the start of a dirt path. \nIn the distance you can see the looming silhouette of HatSquid's Great and Wonderful Tower");
 			Console.Write("How many steps would you like to take down the path?");
 			StepsTaken = Console.ReadLine();
-			//Convert Steps to int.
-			int Steps = int.Parse(StepsTaken);
-			Console.Write("You took " + Steps + " steps.");
-
-			//Show number of extra steps if overshot.
-			if (Steps > 50)
+			//Test if can parse
+			int Steps;
+			Boolean CanParse = int.TryParse(StepsTaken,out Steps);
+			if(CanParse ==false)
 			{
+				Console.WriteLine("You did not enter a valid number.");
+				Console.Write("Suddenly, you pass out for absolutely no reason.");
+				Console.WriteLine("\nWhen you come to, you're at a wooden bridge over a moat, standing before a steel door.");
+			}
+			
+			//Show number of extra steps if overshot.
+			else if (Steps > 50)
+			{
+				Console.Write("You took " + Steps + " steps.");
 				Steps = Steps - PathDistance;
 				Console.Write("This is " + Steps + " more than you needed to reach the tower.");
 				Console.WriteLine("\nYou have stopped on a wooden bridge over a moat, standing before a steel door.");
@@ -70,6 +81,7 @@ namespace SzeTuM_HW
 			//Show number of needed steps if undershot.
 			else
 			{
+				Console.Write("You took " + Steps + " steps.");
 				Steps = PathDistance - Steps;
 				Console.Write("This is " + Steps + " less than you needed to reach the tower.");
 				Console.Write("Suddenly, you pass out for absolutely no reason.");
@@ -78,16 +90,40 @@ namespace SzeTuM_HW
 			Console.WriteLine("There is a note on the door that says the following: \nDear " + PlayerName + ", The gate is locked and I lost the key. Please find it.");
 			Console.WriteLine("Press Enter to roll for finding the key.");
 			Console.ReadLine();
+			//Roll Dice
 			roll1 = Generator.DiceRoll();
 			roll2 = Generator.DiceRoll();
 			total = roll1 + roll2;
 			Console.WriteLine("You rolled a " + total);
+			//Kill Player if underolled
 			if (total < 4)
 			{
 				Console.WriteLine("You failed to find the key!");
+				Console.ReadLine();
+				Console.BackgroundColor = ConsoleColor.DarkRed;
 				Console.WriteLine("The door falls forwards and you are squashed flat.");
+				Console.ReadLine();
 				Console.WriteLine("The bridge beneath you then breaks, and the gators in the moat enjoy a nice meal!");
+				Console.ReadLine();
 				Console.WriteLine(PlayerName + "'s adventure ends here, eaten by gators.");
+				Environment.Exit(0);
+			}
+			//Continue onwards
+			else
+			{
+				//Select Third Color of String 
+				CLocation = Colors.IndexOf(",");
+				CLength = Colors.Length - CLocation;
+				ThirdColor = Colors.Substring(CLocation+1,CLength-1);
+				CLocation = ThirdColor.IndexOf(",");
+				CLength = ThirdColor.Length - CLocation;
+				ThirdColor = ThirdColor.Substring(CLocation+1, CLength-1);
+				CLocation = ThirdColor.IndexOf(",");
+				CLength = ThirdColor.Length - CLocation;
+				ThirdColor = ThirdColor.Substring(0, CLocation);
+				Console.WriteLine("You've found the key!");
+				Console.WriteLine("The door in front of you slides into the ground without you even using the key.");
+				Console.WriteLine("You step through the doorway and are greeted by a floating, glowing "+ThirdColor+" Snake.");
 			}
 			//First Floor
 			//Mostly empty room, Large Central Stone Pillar
@@ -147,6 +183,7 @@ namespace SzeTuM_HW
 		{
 			String PlayerName = "Lazy";
 			String TempName;
+			String SpaceLocation;
 			Console.WriteLine("Welcome to HatSquid's Spooky Tower!");
 			Console.WriteLine("\nCan you enter, then escape again for no good reason?");
 			Console.WriteLine("Type your commands such as walk, search, duck, etc \nto explore the world  and try to survive!");
@@ -160,6 +197,8 @@ namespace SzeTuM_HW
 			{
 				Console.WriteLine("If you won't enter a name, I'll simply call you " + PlayerName + "!");
 			}
+			//Removes White Space
+			PlayerName = PlayerName.Replace(" ", "");
 			return PlayerName;
 		}
 	}
