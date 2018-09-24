@@ -7,7 +7,8 @@ using System.Threading.Tasks;
  * Class: IGME105
  * Author: Matthew Sze-Tu
  * Purpose: Create a text-based adventure
- * Recent Changes: Added door roll, trimed name, parsed steps. 
+ * Recent Changes: Added door roll, trimed name, parsed steps, fixed trim of y/n and converted to uppercase. 
+ * Fixed Constant Names, Swapped order of Welcome and Question. 
  */
 namespace SzeTuM_HW
 {
@@ -15,21 +16,39 @@ namespace SzeTuM_HW
 	{
 		static void Main(string[] args)
 		{
-			const String Colors = "Red,Blue,Pink,Gray,Purple,Aquamarine,Gold,Silver";
+			const String COLORS = "Red,Blue,Pink,Gray,Purple,Aquamarine,Gold,Silver";
 			String ThirdColor;
 			int CLocation;
 			int CLength;
 			String PlayGame;
 			String PlayerName;
-			const int PathDistance = 50;
+			const int PATH_DISTANCE = 50;
 			String StepsTaken;
 			int roll1;
 			int roll2;
 			int total;
-			//Start Game, ask if they want to play game. 
-			Console.Write("Would you like to play the Hatsquid's Great and Wonderful Tower?");
+            //Ask for name
+            PlayerName = Welcome();
+            //Start Game, ask if they want to play game. 
+            Console.Write("Would you like to play the Hatsquid's Great and Wonderful Tower?");
 			PlayGame = Console.ReadLine();
-			if (PlayGame.Substring(0, 1) == "Y" || PlayGame.Substring(0, 1) == "y")
+            //Prevent Crash when entering nothing
+            if(PlayGame == "")
+            {
+                PlayGame = "N";
+            }
+            PlayGame = PlayGame.Substring(0, 1);
+            //Convert first character to uppercase
+            if(PlayGame == "y")
+            {
+                PlayGame = "Y";
+            }
+            else if (PlayGame == "n")
+            {
+                PlayGame = "N";
+            }
+            //Determine if player wants to play
+			if (PlayGame == "Y")
 			{
 				Console.WriteLine("Alright then, lets goooooooooooo!");
 			}
@@ -37,8 +56,6 @@ namespace SzeTuM_HW
 			{
 				Console.WriteLine("Well you don't have a choice anyways, here we goooooooooooooooooo!");
 			}
-			//Ask for name
-			PlayerName = Welcome();
 			Console.BackgroundColor = ConsoleColor.DarkMagenta;
 			Console.ForegroundColor = ConsoleColor.Cyan;
 			//Provide opening narration/instructions
@@ -62,7 +79,7 @@ namespace SzeTuM_HW
 			//Test if can parse
 			int Steps;
 			Boolean CanParse = int.TryParse(StepsTaken,out Steps);
-			if(CanParse ==false)
+			if(CanParse == false)
 			{
 				Console.WriteLine("You did not enter a valid number.");
 				Console.Write("Suddenly, you pass out for absolutely no reason.");
@@ -73,7 +90,7 @@ namespace SzeTuM_HW
 			else if (Steps > 50)
 			{
 				Console.Write("You took " + Steps + " steps.");
-				Steps = Steps - PathDistance;
+				Steps = Steps - PATH_DISTANCE;
 				Console.Write("This is " + Steps + " more than you needed to reach the tower.");
 				Console.WriteLine("\nYou have stopped on a wooden bridge over a moat, standing before a steel door.");
 			}
@@ -82,7 +99,7 @@ namespace SzeTuM_HW
 			else
 			{
 				Console.Write("You took " + Steps + " steps.");
-				Steps = PathDistance - Steps;
+				Steps = PATH_DISTANCE - Steps;
 				Console.Write("This is " + Steps + " less than you needed to reach the tower.");
 				Console.Write("Suddenly, you pass out for absolutely no reason.");
 				Console.WriteLine("\nWhen you come to, you're at a wooden bridge over a moat, standing before a steel door.");
@@ -95,7 +112,7 @@ namespace SzeTuM_HW
 			roll2 = Generator.DiceRoll();
 			total = roll1 + roll2;
 			Console.WriteLine("You rolled a " + total);
-			//Kill Player if underolled
+			//Kill Player if underrolled
 			if (total < 4)
 			{
 				Console.WriteLine("You failed to find the key!");
@@ -112,9 +129,9 @@ namespace SzeTuM_HW
 			else
 			{
 				//Select Third Color of String 
-				CLocation = Colors.IndexOf(",");
-				CLength = Colors.Length - CLocation;
-				ThirdColor = Colors.Substring(CLocation+1,CLength-1);
+				CLocation = COLORS.IndexOf(",");
+				CLength = COLORS.Length - CLocation;
+				ThirdColor = COLORS.Substring(CLocation+1,CLength-1);
 				CLocation = ThirdColor.IndexOf(",");
 				CLength = ThirdColor.Length - CLocation;
 				ThirdColor = ThirdColor.Substring(CLocation+1, CLength-1);
@@ -183,7 +200,6 @@ namespace SzeTuM_HW
 		{
 			String PlayerName = "Lazy";
 			String TempName;
-			String SpaceLocation;
 			Console.WriteLine("Welcome to HatSquid's Spooky Tower!");
 			Console.WriteLine("\nCan you enter, then escape again for no good reason?");
 			Console.WriteLine("Type your commands such as walk, search, duck, etc \nto explore the world  and try to survive!");
