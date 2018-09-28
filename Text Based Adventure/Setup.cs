@@ -24,7 +24,7 @@ namespace Text_Based_Adventure
 			Console.WriteLine("\nCan you enter, then escape again for no good reason?");
 			Console.WriteLine("Type your commands such as walk, search, duck, etc \nto explore the world  and try to survive!");
 			Console.Write("Please enter your name.");
-			TempName = Console.ReadLine();
+			TempName = Console.ReadLine().Trim();
 			if (string.IsNullOrEmpty(TempName) != true)
 			{
 				PlayerName = TempName;
@@ -33,8 +33,6 @@ namespace Text_Based_Adventure
 			{
 				Console.WriteLine("If you won't enter a name, I'll simply call you " + PlayerName + "!");
 			}
-			//Removes White Space
-			Program.PlayerName = PlayerName.Replace(" ", "");
 			return PlayerName;
 		}
 
@@ -45,30 +43,17 @@ namespace Text_Based_Adventure
 			//Ask for name
 			//Start Game, ask if they want to play game. 
 			Console.Write("Would you like to play the Hatsquid's Great and Wonderful Tower?");
-			PlayGame = Console.ReadLine();
-			//Prevent Crash when entering nothing
-			if (PlayGame == "")
-			{
-				PlayGame = "N";
-			}
+			PlayGame = Console.ReadLine().Trim().ToUpper();
+			//Convert to first letter only
 			PlayGame = PlayGame.Substring(0, 1);
 			//Convert first character to uppercase
-			if (PlayGame == "y")
+			if (PlayGame != "Y")
 			{
-				PlayGame = "Y";
-			}
-			else if (PlayGame == "n")
-			{
-				PlayGame = "N";
-			}
-			//Determine if player wants to play
-			if (PlayGame == "Y")
-			{
-				Console.WriteLine("Alright then, lets goooooooooooo!");
+				Console.WriteLine("Well you don't have a choice anyways, here we goooooooooooooooooo!");
 			}
 			else
 			{
-				Console.WriteLine("Well you don't have a choice anyways, here we goooooooooooooooooo!");
+				Console.WriteLine("Alright then, lets goooooooooooo!");
 			}
 			Console.BackgroundColor = ConsoleColor.DarkMagenta;
 			Console.ForegroundColor = ConsoleColor.Cyan;
