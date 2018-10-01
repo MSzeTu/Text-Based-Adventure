@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 /*Name: SzeTu-HW4
  * Class: IGME105
  * Author: Matthew Sze-Tu
- * Purpose: Create a text-based adventure
+ * Purpose: Dungeon of Text-Based Adventure
  * Recent Changes: Created
  */
 namespace Text_Based_Adventure

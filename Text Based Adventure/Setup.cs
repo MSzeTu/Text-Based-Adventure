@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 /*Name: SzeTu-HW4
  * Class: IGME105
  * Author: Matthew Sze-Tu
- * Purpose: Create a text-based adventure
+ * Purpose: Sets up the text-based adventure
  * Recent Changes: Created and added methods
  */
 namespace Text_Based_Adventure
@@ -18,22 +18,18 @@ namespace Text_Based_Adventure
          */
 		public static string Welcome()
 		{
-			String PlayerName = "Lazy";
 			String TempName;
 			Console.WriteLine("Welcome to HatSquid's Spooky Tower!");
 			Console.WriteLine("\nCan you enter, then escape again for no good reason?");
 			Console.WriteLine("Type your commands such as walk, search, duck, etc \nto explore the world  and try to survive!");
 			Console.Write("Please enter your name.");
+            //Remove empty space from name
 			TempName = Console.ReadLine().Trim();
-			if (string.IsNullOrEmpty(TempName) != true)
+			if (string.IsNullOrEmpty(TempName) == true)
 			{
-				PlayerName = TempName;
+				Console.WriteLine("If you won't enter a name, I'll simply call you " + Program.PlayerName + "!");
 			}
-			else
-			{
-				Console.WriteLine("If you won't enter a name, I'll simply call you " + PlayerName + "!");
-			}
-			return PlayerName;
+			return TempName;
 		}
 
 		//Provides opening narration and asks if player wants to play
@@ -44,6 +40,11 @@ namespace Text_Based_Adventure
 			//Start Game, ask if they want to play game. 
 			Console.Write("Would you like to play the Hatsquid's Great and Wonderful Tower?");
 			PlayGame = Console.ReadLine().Trim().ToUpper();
+            //Prevent error if nothing entered
+            if(string.IsNullOrEmpty(PlayGame) == true)
+            {
+                PlayGame = "No";
+            }
 			//Convert to first letter only
 			PlayGame = PlayGame.Substring(0, 1);
 			//Convert first character to uppercase

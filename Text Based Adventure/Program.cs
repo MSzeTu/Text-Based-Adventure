@@ -13,10 +13,12 @@ namespace Text_Based_Adventure
 {
 	class Program
 	{
-		public static String PlayerName;
+        //Setup Playername attribute
+		public static String PlayerName = "Lazy";
+        //Run main program
 		static void Main(string[] args)
 		{
-			Setup.Welcome();
+			PlayerName = Setup.Welcome();
 			Setup.Intro();
 			Walkway.ExploreWalk();
 			Walkway.TowerDoor();

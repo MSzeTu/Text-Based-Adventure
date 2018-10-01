@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 /*Name: SzeTu-HW4
  * Class: IGME105
  * Author: Matthew Sze-Tu
- * Purpose: Create a text-based adventure
+ * Purpose: Initial walkway of text-based adventure
  * Recent Changes: Created and added methods
  */
 namespace Text_Based_Adventure
@@ -26,6 +26,7 @@ namespace Text_Based_Adventure
 		//Explore the Yard
 		public static void ExploreWalk()
 		{
+            //Path and step variables
 			const int PATH_DISTANCE = 50;
 			String StepsTaken;
 			//Begin Path
@@ -43,7 +44,7 @@ namespace Text_Based_Adventure
 			}
 
 			//Show number of extra steps if overshot.
-			else if (Steps >= 50)
+			else if (Steps >= PATH_DISTANCE)
 			{
 				Console.Write("You took " + Steps + " steps.");
 				Steps = Steps - PATH_DISTANCE;
@@ -65,9 +66,11 @@ namespace Text_Based_Adventure
 		//Roll to Open the Tower door, find colored snake
 		public static void TowerDoor()
 		{
+            //Dice rolls
 			int roll1;
 			int roll2;
 			int total;
+            //Colors for later use
 			const String COLORS = "Red,Blue,Pink,Gray,Purple,Aquamarine,Gold,Silver";
 			String ThirdColor;
 			int CLocation;
@@ -85,7 +88,7 @@ namespace Text_Based_Adventure
 			Console.WriteLine("Your second roll was a " + roll2);	
 			Console.WriteLine("You rolled a " + total);
 			//Kill Player if underrolled
-			if (total < 4)
+			if (total <= 4)
 			{
 				Console.WriteLine("You failed to find the key!");
 				Console.ReadLine();
@@ -118,4 +121,3 @@ namespace Text_Based_Adventure
 			}
 		}
 	}
-
