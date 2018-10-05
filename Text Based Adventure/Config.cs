@@ -13,12 +13,20 @@ namespace Text_Based_Adventure
 {
 	class Config
 	{		
-		//Roll 6 sided dice
-		public static int DiceRoll()
+		//Roll die with specified sides
+		public static int DiceRoll(int min, int max)
 		{
 			Random Roll = new Random();
-			int answer = Roll.Next(1, 7);
+			int answer = Roll.Next(min, max);
 			return answer;
 		}
-	}
+        //Roll a number of dice with specified sides 
+        public static int DiceRoll(int min, int max, int DiceNum)
+        {
+            Random Roll = new Random();
+            int answer = Roll.Next(min, max);
+            answer = (answer * DiceNum) / DiceNum;
+            return answer;
+        }
+    }
 }

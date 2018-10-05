@@ -24,7 +24,7 @@ namespace Text_Based_Adventure
 		//Large Open Steel gate into giant stone tower
 
 		//Explore the Yard
-		public static void ExploreWalk()
+		public void ExploreWalk()
 		{
             //Path and step variables
 			const int PATH_DISTANCE = 50;
@@ -64,7 +64,7 @@ namespace Text_Based_Adventure
 		}
 
 		//Roll to Open the Tower door, find colored snake
-		public static void TowerDoor()
+		public void TowerDoor()
 		{
             //Dice rolls
 			int roll1;
@@ -80,9 +80,9 @@ namespace Text_Based_Adventure
 			Console.WriteLine("Press Enter to roll for finding the key,\n you must roll above a 4 to open the door.");
 			Console.ReadLine();
 			//Roll Dice
-			roll1 = Config.DiceRoll();
+			roll1 = Config.DiceRoll(1,7);
 			System.Threading.Thread.Sleep(1000);
-			roll2 = Config.DiceRoll();
+			roll2 = Config.DiceRoll(1,7,500);
 			total = roll1 + roll2;
 			Console.WriteLine("Your first roll was a " + roll1);
 			Console.WriteLine("Your second roll was a " + roll2);	
@@ -116,7 +116,7 @@ namespace Text_Based_Adventure
 					ThirdColor = ThirdColor.Substring(0, CLocation);
 					Console.WriteLine("You've found the key!");
 					Console.WriteLine("The door in front of you slides into the ground without you even using the key.");
-					Console.WriteLine("You step through the doorway and are greeted by a floating, glowing " + ThirdColor + " Snake.");
+					Console.WriteLine("You step through the doorway and are greeted by a floating, glowing " + ThirdColor + " ball.");
 				}
 			}
 		}
