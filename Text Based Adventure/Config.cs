@@ -28,5 +28,25 @@ namespace Text_Based_Adventure
             answer = (answer * DiceNum) / DiceNum;
             return answer;
         }
+		//Create MiniHatSquids
+		public static void BuildHatSquids()
+		{
+			//Create Mini Hat Squids
+			MiniHatSquid DunceSquid = new MiniHatSquid();
+			MiniHatSquid SupremeSquid = new MiniHatSquid();
+			//Set attributes
+			DunceSquid.Health = 1;
+			DunceSquid.TentacleNum = 0;
+			DunceSquid.Hat = "Dunce Cap";
+			DunceSquid.Accesories = "nothing";
+			DunceSquid.Mood = "Dumb";
+			SupremeSquid.Health = 50;
+			SupremeSquid.TentacleNum = 6;
+			SupremeSquid.Accesories = "wads of cash, Watches, and a Bracelet.";
+			SupremeSquid.Mood = "Self-centered";
+			SupremeSquid.Hat = "Supreme Brand Flat-brimmed Cap.";
+			//Call Greeting
+			MiniHatSquid.Greeting(SupremeSquid, DunceSquid);
+		}
     }
 }
