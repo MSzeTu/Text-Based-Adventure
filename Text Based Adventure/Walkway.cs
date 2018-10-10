@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-/*Name: SzeTu-HW4
+/*Name: SzeTu-HW5
  * Class: IGME105
  * Author: Matthew Sze-Tu
  * Purpose: Initial walkway of text-based adventure
