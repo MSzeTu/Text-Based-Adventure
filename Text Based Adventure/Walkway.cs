@@ -116,7 +116,7 @@ namespace Text_Based_Adventure
 					ThirdColor = ThirdColor.Substring(0, CLocation);
 					Console.WriteLine("You've found the key!");
 					Console.WriteLine("The door in front of you slides into the ground without you even using the key.");
-					Console.WriteLine("You step through the doorway and are greeted by a floating, glowing " + ThirdColor + " ball.");
+					Console.WriteLine("You step through the doorway and are greeted by a floating, glowing " + ThirdColor + " ball. The ball then instantly disappears.");
 				}
 			}
 		}

@@ -28,6 +28,7 @@ namespace Text_Based_Adventure
 			if (string.IsNullOrEmpty(TempName) == true)
 			{
 				Console.WriteLine("If you won't enter a name, I'll simply call you " + Program.PlayerName + "!");
+                TempName = "Lazy";
 			}
 			return TempName;
 		}

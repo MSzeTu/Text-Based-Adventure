@@ -20,10 +20,13 @@ namespace Text_Based_Adventure
 		{
             //Create class objects 
             Walkway Walk1 = new Walkway();
+            Tower Tower1 = new Tower();
+            //Begin Main process
             PlayerName = Setup.Welcome();
 			Setup.Intro();
 			Walk1.ExploreWalk();
 			Walk1.TowerDoor();
+            Tower1.Entrance();
 			
 			Console.WriteLine("Press enter to Close");
 			Console.ReadLine();

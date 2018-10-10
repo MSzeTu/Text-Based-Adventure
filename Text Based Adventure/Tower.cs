@@ -13,27 +13,32 @@ namespace Text_Based_Adventure
 {
 	class Tower
 	{
-		//First Floor
-		//Mostly empty room, Large Central Stone Pillar
-		//Slot in the far wall
-		//NPC Ghost, Warns to arm self
-		//6 suits of armor, one in each corner and one in the middle of East and West
-		//Each suit has sword and shield
-		//Player may take Sword and/or Shield
-		//Inserting Sword into slot causes ceiling to open and Ladder to drop down.  
-		//Second Floor 
-		//Two suits of armor flanking the ladder. Sword and Shield each
-		//Raised Central Pillar, with a little underpass with openings to each cardinal direction
-		//Player steps into central underpass, light *click*
-		// S, E, and W will randomly click, shooting arrows. Player must block with shield in proper direction 6 times. Failure=Death
-		//Upon success, Ladder drops from ceiling in South end of room.
-		//Third Floor
-		//Large Sphinx sitting in center of room.
-		//Again, Suits of armor flank the entrance
-		//Sphinx asks Riddle (TBD)
-		//On failed answer, Sphinx attacks
-		//Fight sphinx
-		//On succesful answer, Sphinx steps aside, revealing a hole.
-		//Drop down hole
+        //Rooms
+            //Kitchen with absolutely nothing in it.
+            //Pool room with a giant swimming pool. The pool is empty but theres water everywhere else
+            //Wardrobe with lots and lots of hats.
+            //Upside-down-house room where everything is upside dooooooooooooooooown
+            //Tiny room with a hole that leads to the dungeon.
+
+        //Introduce Player to the building and rooms
+        public void Entrance()
+        {
+            //Have player enter
+            Console.WriteLine("Press enter to look around the tower entrance.");
+            Console.ReadLine();
+            Console.WriteLine("");
+            //Describe Layout
+            Console.WriteLine("Through the now-missing gate you can see down a straight hallway with shiny silver stone walls.");
+            Console.WriteLine("On the left there are two doorways leading to two seperate rooms.");
+            Console.WriteLine("On the right there are ALSO two doorways leading to two seperate rooms.");
+            Console.WriteLine("The hallway ends at a stone wall with an extremely tiny door at the bottom, only big enough for maybe a mouse.");
+            Console.WriteLine("");
+            //Describe each door
+            Console.WriteLine("The first door on the left has a sign on it that says its the pool. \nThere is a small stream of water leaking out from under the door.");
+            Console.WriteLine("The second door on the left is labeled as the upside-down-house. The door is, fittingly, upside down.");
+            Console.WriteLine("The first door on the right is labeled as the kitchen. The door is actually just on fire. You're not sure why.");
+            Console.WriteLine("The second door on the right is labeled as the wardrobe. There is nothing of note about that door otherwise.");
+            Console.WriteLine("It looks like theres a tiny sign on the small door at the end of the hall, but you can't read it from here.");
+        }
 	}
 }
