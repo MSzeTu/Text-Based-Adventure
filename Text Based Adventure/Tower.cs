@@ -20,6 +20,11 @@ namespace Text_Based_Adventure
             //Upside-down-house room where everything is upside dooooooooooooooooown
             //Tiny room with a hole that leads to the dungeon.
 
+        //Greeting for the first Mini Hatsquids.
+        public void Greeting()
+        {
+
+        }
         //Introduce Player to the building and rooms
         public void Entrance()
         {
