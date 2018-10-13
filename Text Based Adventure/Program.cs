@@ -18,17 +18,26 @@ namespace Text_Based_Adventure
         //Run main program
 		static void Main(string[] args)
 		{
-            //Create class objects 
-            Walkway Walk1 = new Walkway();
+			Boolean Die;
+			//Create class objects 
+			Walkway Walk1 = new Walkway();
             Tower Tower1 = new Tower();
 			
             //Begin Main process
             PlayerName = Setup.Welcome();
 			Setup.Intro();
 			Walk1.ExploreWalk();
-			Walk1.TowerDoor();
+			Die = Walk1.TowerDoor();
+			//kill player
+			if(Die == true)
+			{
+				Config.GameEnd(1);
+			}
+			//continue normally
+			Tower1.ColoredGreet();
             Tower1.Entrance();
 			Config.BuildHatSquids();
+			MiniHatSquid.FirstInteraction();
 			Console.WriteLine("Press enter to Close");
 			Console.ReadLine();
 		}

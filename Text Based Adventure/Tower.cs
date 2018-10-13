@@ -21,6 +21,27 @@ namespace Text_Based_Adventure
             //Tiny room with a hole that leads to the dungeon.
 
         //Introduce Player to the building and rooms
+		public void ColoredGreet()
+		{
+			//Colors for later use
+			const String COLORS = "Red,Blue,Pink,Gray,Purple,Aquamarine,Gold,Silver";
+			String ThirdColor;
+			int CLocation;
+			int CLength;
+			//Select Third Color of String 
+			CLocation = COLORS.IndexOf(",");
+			CLength = COLORS.Length - CLocation;
+			ThirdColor = COLORS.Substring(CLocation + 1, CLength - 1);
+			CLocation = ThirdColor.IndexOf(",");
+			CLength = ThirdColor.Length - CLocation;
+			ThirdColor = ThirdColor.Substring(CLocation + 1, CLength - 1);
+			CLocation = ThirdColor.IndexOf(",");
+			CLength = ThirdColor.Length - CLocation;
+			ThirdColor = ThirdColor.Substring(0, CLocation);
+			Console.WriteLine("You've found the key!");
+			Console.WriteLine("The door in front of you slides into the ground without you even using the key.");
+			Console.WriteLine("You step through the doorway and are greeted by a floating, glowing " + ThirdColor + " ball. The ball then instantly disappears.");
+		}
         public void Entrance()
         {
             //Have player enter

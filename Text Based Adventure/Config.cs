@@ -48,5 +48,52 @@ namespace Text_Based_Adventure
 			//Call Greeting
 			MiniHatSquid.Greeting(SupremeSquid, DunceSquid);
 		}
+		//Use when a player loses to end the game
+		public static void GameEnd(int loss)
+		{
+			Console.BackgroundColor = ConsoleColor.DarkRed;
+			switch (loss)
+			{
+				case 0:
+					{
+						Console.WriteLine("You've chosen to quit the game. In other words, you lose!");
+						Console.WriteLine("Thanks for playing! \nPress enter to close the game.");
+						Console.ReadLine();
+						Environment.Exit(0);
+						break;
+					}
+				case 1:
+					{
+						Console.WriteLine("The door falls forwards and you are squashed flat.");
+						Console.ReadLine();
+						Console.WriteLine("The bridge beneath you then breaks, and the gators in the moat enjoy a nice meal!");
+						Console.WriteLine(Program.PlayerName + "'s adventure ends here, eaten by gators.");
+						Console.WriteLine("Press any key to close the program.");
+						Console.ReadLine();
+						Environment.Exit(0);
+						break;
+					}
+				case 2:
+					{
+						Console.WriteLine("The Duncesquid explodes violently, turning everything in a 500 foot radius into a fine, purple ash.");
+						Console.WriteLine("This, of course, includes you. Maybe next time don't be such a jerk?");
+						Console.WriteLine(Program.PlayerName + "'s adventure ends here, blown up by the DunceSquid.");
+						Console.WriteLine("Press any key to close the program.");
+						Console.ReadLine();
+						Environment.Exit(0);
+						break;
+					}
+				//error message
+				default:
+					{
+						Console.WriteLine("SOMETHING HAS GONE HORRIBLY WRONG. ABORTING PROGRAM!");
+						Console.ReadLine();
+						Environment.Exit(0);
+						break;
+					}
+					
+			}
+				
+		}
     }
 }

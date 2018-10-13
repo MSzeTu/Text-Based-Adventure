@@ -64,17 +64,13 @@ namespace Text_Based_Adventure
 		}
 
 		//Roll to Open the Tower door, find colored snake
-		public void TowerDoor()
+		public Boolean TowerDoor()
 		{
+			Boolean Die = false;
             //Dice rolls
 			int roll1;
 			int roll2;
 			int total;
-            //Colors for later use
-			const String COLORS = "Red,Blue,Pink,Gray,Purple,Aquamarine,Gold,Silver";
-			String ThirdColor;
-			int CLocation;
-			int CLength;
 
 			Console.WriteLine("There is a note on the door that says the following: \nDear " + Program.PlayerName + ", The gate is locked and I lost the key. Please find it.");
 			Console.WriteLine("Press Enter to roll for finding the key,\n you must roll above a 4 to open the door.");
@@ -91,33 +87,10 @@ namespace Text_Based_Adventure
 			if (total <= 4)
 			{
 				Console.WriteLine("You failed to find the key!");
+				Die = true;
 				Console.ReadLine();
-				Console.BackgroundColor = ConsoleColor.DarkRed;
-				Console.WriteLine("The door falls forwards and you are squashed flat.");
-				Console.ReadLine();
-				Console.WriteLine("The bridge beneath you then breaks, and the gators in the moat enjoy a nice meal!");
-				Console.WriteLine(Program.PlayerName + "'s adventure ends here, eaten by gators.");
-				Console.WriteLine("Press any key to close the program.");
-				Console.ReadLine();
-				Environment.Exit(0);
 			}
-			//Continue onwards
-			else
-				{
-					//Select Third Color of String 
-					CLocation = COLORS.IndexOf(",");
-					CLength = COLORS.Length - CLocation;
-					ThirdColor = COLORS.Substring(CLocation + 1, CLength - 1);
-					CLocation = ThirdColor.IndexOf(",");
-					CLength = ThirdColor.Length - CLocation;
-					ThirdColor = ThirdColor.Substring(CLocation + 1, CLength - 1);
-					CLocation = ThirdColor.IndexOf(",");
-					CLength = ThirdColor.Length - CLocation;
-					ThirdColor = ThirdColor.Substring(0, CLocation);
-					Console.WriteLine("You've found the key!");
-					Console.WriteLine("The door in front of you slides into the ground without you even using the key.");
-					Console.WriteLine("You step through the doorway and are greeted by a floating, glowing " + ThirdColor + " ball. The ball then instantly disappears.");
-				}
+			return Die;
 			}
 		}
 	}
