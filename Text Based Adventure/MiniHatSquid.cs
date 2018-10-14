@@ -73,35 +73,46 @@ namespace Text_Based_Adventure
 				Console.WriteLine("You try to take the SupremeSquid's money.");
 				Config.GameEnd(3);
 			}
-			else if (Answer == "Q" || Answer == "K" || Answer == "T" || Answer == "S")
+			//converts to first letter
+			Answer = Answer.Substring(0, 1);
+			Console.WriteLine("");
+			if (Answer != "Q")
 			{
-				if (Answer == "Q")
-					Config.GameEnd(0);
-				else if (Answer == "K")
+				if (Answer != "K")
+				{
+					if (Answer != "T")
+					{
+						if (Answer == "S")
+						{
+							Console.WriteLine("You show off your expensive watch to the SupremeSquid.");
+							Console.WriteLine("In return, it show's off seven watches on each tentacle that are even more expensive and fancy.");
+							Console.WriteLine("Satisifed that it seems to be better than you, the SupremeSquid picks up the DunceSquid and phases through the floor.");
+							Console.WriteLine("Press enter to continue forwards.");
+							Console.ReadLine();
+						}
+						else
+						{
+							Console.WriteLine("Ah a rulebreaker huh? I bet a rulebreaker like you would try to take that Squid's Lunchmoney!");
+							Console.WriteLine("You try to take the SupremeSquid's money.");
+							Config.GameEnd(3);
+						}
+					}
+					else
+					{
+						Console.WriteLine("You try to take the SupremeSquid's money.");
+						Config.GameEnd(3);
+					}
+				}
+				else
 				{
 					Console.WriteLine("You rear back and punt the DunceSquid with all your might!");
 					Config.GameEnd(2);
 				}
-				else if (Answer == "T")
-				{
-					Console.WriteLine("You try to take the SupremeSquid's money.");
-					Config.GameEnd(3);
-				}
-				else if (Answer == "S")
-				{
-					Console.WriteLine("You show off your expensive watch to the SupremeSquid.");
-					Console.WriteLine("In return, it show's off seven watches on each tentacle that are even more expensive and fancy.");
-					Console.WriteLine("Satisifed that it seems to be better than you, the SupremeSquid picks up the DunceSquid and phases through the floor.");
-					Console.WriteLine("Press enter to continue forwards.");
-					Console.ReadLine();
-				}
 			}
 			else
 			{
-				Console.WriteLine("Ah a rulebreaker huh? I bet a rulebreaker like you would try to take that Squid's Lunchmoney!");
-				Console.WriteLine("You try to take the SupremeSquid's money.");
-				Config.GameEnd(3);
-			}			
+				Config.GameEnd(0);
+			}
 		}
 	}
 }

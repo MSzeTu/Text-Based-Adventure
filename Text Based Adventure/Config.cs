@@ -83,6 +83,28 @@ namespace Text_Based_Adventure
 						Environment.Exit(0);
 						break;
 					}
+				case 3:
+					{
+						Console.WriteLine("The SupremeSquid jumps away from you, looking very angry. \nYou try to apologize, but it's too late.");
+						Console.WriteLine("The SupremeSquid writes a diss track about you. Before you know it, hordes of rapid teenagers are mad at you.");
+						Console.WriteLine("You're shamed everywhere you go. The world has no safe havens anymore.");
+						Console.WriteLine(Program.PlayerName + "'s adventure ends here, game-ended by the SupremeSquid's youtube fame.");
+						Console.WriteLine("Press any key to close the program.");
+						Console.ReadLine();
+						Environment.Exit(0);
+						break;
+					}
+				case 4:
+					{
+						Console.WriteLine("You eat the cookie. It's delicious!");
+						Console.WriteLine("It's also poisoned. You die. Painfully.");
+						Console.WriteLine("You really shouldn't eat random food you find lying around.");
+						Console.WriteLine(Program.PlayerName + "'s adventure ends here, killed by a poisonus cookie.");
+						Console.WriteLine("Press any key to close the program.");
+						Console.ReadLine();
+						Environment.Exit(0);
+						break;
+					}
 				//error message
 				default:
 					{

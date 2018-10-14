@@ -38,6 +38,11 @@ namespace Text_Based_Adventure
             Tower1.Entrance();
 			Config.BuildHatSquids();
 			MiniHatSquid.FirstInteraction();
+			Tower1.RoomTravel();
+			Tower1.RoomTravel();
+			Tower1.RoomTravel();
+			Tower1.RoomTravel();
+			Tower1.RoomTravel();
 			Console.WriteLine("Press enter to Close");
 			Console.ReadLine();
 		}
