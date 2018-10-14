@@ -105,6 +105,64 @@ namespace Text_Based_Adventure
 						Environment.Exit(0);
 						break;
 					}
+				case 5:
+					{
+						Console.WriteLine("The room begins to shrink around you.");
+						Console.WriteLine("You try to curl into a ball and take up as little space as possible, but it doesn't help.");
+						Console.WriteLine("Eventually the room closes around you, crushing you completely.");
+						Console.WriteLine(Program.PlayerName + "'s adventure ends here, every bone in their body crushed by the shrinking room.");
+						Console.WriteLine("Press any key to close the program.");
+						Console.ReadLine();
+						Environment.Exit(0);
+						break;
+					}
+				case 6:
+					{
+						Console.BackgroundColor = ConsoleColor.White;
+						Console.ForegroundColor = ConsoleColor.Black;
+						System.Console.Clear();					
+						Console.WriteLine("The door swings open and you step through the doorway...");
+						Console.WriteLine("");
+						Console.WriteLine("Only to be met with nothingness.");
+						Console.WriteLine("You turn around, but theres nothing. All around you is nothing. No color, no light, no sound.");
+						Console.WriteLine("Welcome to the void! Enjoy your stay!");
+						Console.WriteLine(Program.PlayerName + "'s adventure ends here, trapped in the endless void.");
+						Console.WriteLine("Press any key to close the program.");
+						Console.ReadLine();
+						Environment.Exit(0);
+						break;
+					}
+				case 7:
+					{
+						Console.WriteLine("You fall. And you fall. And you fall. And you fall. And you fall.");
+						Console.WriteLine("And you fall. And you fall. And you fall. And you fall. And you fall.");
+						Console.WriteLine("And you fall. And you fall. And you fall. And you fall. And you fall.");
+						Console.WriteLine("And you fall. And you fall. And you fall. And you fall. And you fall.");
+						Console.WriteLine("And you fall. And you fall. And you fall. And you fall. And you fall.");
+						Console.WriteLine("And you fall. And you fall. And you fall. And you fall. And you fall.");
+						Console.WriteLine("And you fall. And you fall. And you fall. And you fall. And you fall.");
+						Console.WriteLine("And you fall. And you fall. And you fall. And you fall. And you fall.");
+						Console.WriteLine("And you fall. And you fall. And you fall. And you fall. And you fall.");
+						Console.WriteLine("And you fall. And you fall. And you fall. And you fall. And you fall.");
+						Console.WriteLine("And you fall. And you fall. And you fall. And you fall. And you fall.");
+						Console.WriteLine(Program.PlayerName + "'s adventure ends here, they're still falling.");
+						Console.WriteLine("Press any key to close the program.");
+						Console.ReadLine();
+						Environment.Exit(0);
+						break;
+					}
+				case 8:
+					{
+						Console.WriteLine("YOU STAND STILL AND TAKE IT LIKE A MAN!");
+						Console.WriteLine("Unfortunately, everyone is equal, and men are no stronger or more resiliant than anyone else.");
+						Console.WriteLine("A giant schoolbus flies through the air and slams into your head, knocking it clean off your body.");
+						Console.WriteLine("Your body then falls into the pit. I have no idea where your head ended up.");
+						Console.WriteLine(Program.PlayerName + "'s adventure ends here, killed by HatSquid's schoolbus.");
+						Console.WriteLine("Press any key to close the program.");
+						Console.ReadLine();
+						Environment.Exit(0);
+						break;
+					}
 				//error message
 				default:
 					{

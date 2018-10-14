@@ -66,6 +66,7 @@ namespace Text_Based_Adventure
         }
 		public void RoomTravel()
 		{
+			Dungeon Dungeon1 = new Dungeon();
 			Boolean Pass = false;
 			string Answer;
 			Console.WriteLine("With that taken care of, which room do you want to go to? (Enter the bracketed letter to choose.):");
@@ -74,6 +75,7 @@ namespace Text_Based_Adventure
 			Console.WriteLine("The [K]itchen");
 			Console.WriteLine("The [W]ardrobe");
 			Console.WriteLine("The [S]mall Door");
+			Console.WriteLine("[Q]uit (this is not a room, this WILL quit the game.)");
 			Answer = Console.ReadLine().Trim().ToUpper();
 			if (String.IsNullOrEmpty(Answer) == true)
 			{
@@ -106,6 +108,17 @@ namespace Text_Based_Adventure
 				case "S":
 					{
 						Pass = SmallDoor();
+						if (Pass == true)
+						{
+							Dungeon1.DungeonRoomOne();
+							Dungeon1.DungeonRoomTwo();
+							Dungeon1.DungeonRoomThree();
+						}													
+						break;
+					}
+				case "Q":
+					{
+						Config.GameEnd(0);
 						break;
 					}
 				default:
@@ -114,10 +127,6 @@ namespace Text_Based_Adventure
 						Pool();
 						break;
 					}
-			}
-			if (Pass == true)
-			{
-
 			}
 		}
 		//Pool Room 
