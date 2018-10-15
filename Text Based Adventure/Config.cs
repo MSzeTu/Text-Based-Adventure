@@ -163,6 +163,16 @@ namespace Text_Based_Adventure
 						Environment.Exit(0);
 						break;
 					}
+				case 9:
+					{
+						Console.WriteLine("Turns out, Darkness doesn't like being cursed very much. You really hurt it's feelings.");
+						Console.WriteLine("Have you ever heard the phrase 'The Darkness was suffocating?' \nBecause this Darkness is, and it's not a pleasent experience for you.");
+						Console.WriteLine(Program.PlayerName + "'s adventure ends here, literally suffocated by Darkness. They were rude anyways so it's okay.");
+						Console.WriteLine("Press any key to close the program.");
+						Console.ReadLine();
+						Environment.Exit(0);
+						break;
+					}
 				//error message
 				default:
 					{

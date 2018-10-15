@@ -113,6 +113,7 @@ namespace Text_Based_Adventure
 							Dungeon1.DungeonRoomOne();
 							Dungeon1.DungeonRoomTwo();
 							Dungeon1.DungeonRoomThree();
+							Dungeon1.HatSquidsThrone();
 						}													
 						break;
 					}
@@ -207,21 +208,13 @@ namespace Text_Based_Adventure
 							else
 							{
 								Console.WriteLine("You did not enter a valid answer, I'm just going to assume you want to open the door.");
-								Console.WriteLine("You try to open the door on your own.");
-								Console.WriteLine("You can't even reach the doorknob.");
-								Console.WriteLine("The SupremeSquid seems to laugh at you(It's hard to tell when it doesn't have a face. Or a mouth.)");
-								Console.WriteLine("It then floats into the air and turns the doorhandle.");
-								Console.WriteLine("The massive door swings outwards, revealing a hole in the floor. Hurray!");
+								DoorOpen();
 								Pass = true;
 							}
 						}
 						else
 						{
-							Console.WriteLine("You try to open the door on your own.");
-							Console.WriteLine("You can't even reach the doorknob.");
-							Console.WriteLine("The SupremeSquid seems to laugh at you(It's hard to tell when it doesn't have a face. Or a mouth.)");
-							Console.WriteLine("It then floats into the air and turns the doorhandle.");
-							Console.WriteLine("The massive door swings outwards, revealing a hole in the floor. Hurray!");
+							DoorOpen();
 							Pass = true;
 						}
 					}
@@ -248,6 +241,16 @@ namespace Text_Based_Adventure
 			Console.ReadLine();
 			return Pass;
 		}
-		
+		//Opens the door in the smalldoor room
+		public void DoorOpen()
+		{
+			Console.WriteLine("You try to open the door on your own.");
+			Console.WriteLine("You can't even reach the doorknob.");
+			Console.WriteLine("The SupremeSquid seems to laugh at you(It's hard to tell when it doesn't have a face. Or a mouth.)");
+			Console.WriteLine("It then floats into the air and turns the doorhandle.");
+			Console.WriteLine("The massive door swings outwards, revealing a hole in the floor. Hurray!");
+			Console.WriteLine("Press enter to continue");
+			Console.ReadLine();
+		}
 	}
 }
