@@ -182,8 +182,15 @@ namespace Text_Based_Adventure
 							Console.WriteLine("Press enter to continue.");
 							Console.ReadLine();
 						}
+						break;
 					}
-					break;
+				default:
+					{
+						Console.WriteLine("You did not enter a valid input. You wander randomly and fall into the pit.");
+						Config.GameEnd(7);
+						break;
+					}
+					
 			}
 		}
 		/*Room 3
