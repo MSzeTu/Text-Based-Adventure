@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-/*Name: SzeTu-HW5
+/*Name: SzeTu-HW6
  * Class: IGME105
  * Author: Matthew Sze-Tu
  * Purpose: Configure method of text-based adventure
- * Recent Changes: Overloaded Dice Roll
+ * Recent Changes: Added GameEnd and GameWIn
  */
 namespace Text_Based_Adventure
 {
@@ -47,6 +47,61 @@ namespace Text_Based_Adventure
 			SupremeSquid.Hat = "Supreme Brand Flat-brimmed Cap.";
 			//Call Greeting
 			MiniHatSquid.Greeting(SupremeSquid, DunceSquid);
+		}
+		//Wins the Game and gives one of the endings as needed
+		public static void WinGame(int win)
+		{
+			switch (win)
+			{
+				case 1:
+					{
+						Console.WriteLine(Program.PlayerName + " spends the rest of their life as a loyal servant to the Great Hatsquid.");
+						Console.WriteLine("It's a pretty good job, full benefits, good pay, free dental, delicious meals.");
+						Console.WriteLine("Eventually, they rise up to be Hatsquid's 1st Tentacle Man, and from this position, \nhelp Hatsquid conquer the entire world.");
+						Console.WriteLine("This yields a new age of peace and prosperity that lasts until the end of all time.");
+						Console.WriteLine("Congratulations!You won!");
+						//Prevents looping
+						Console.WriteLine("Press enter to close the game.");
+						Console.ReadLine();
+						Environment.Exit(0);
+						break;
+					}
+				case 2:
+					{
+						Console.WriteLine("The Great Hatsquid pity's you! He snaps his fingers (HE DOESN'T EVEN HAVE FINGERS) and you are lifted into the air.");
+						Console.WriteLine("You float off away from the tower, reflecting on your journey along the way.");
+						Console.WriteLine("Eventually you're dropped off at a lovely hotel in Hawaii. How kind of The Great Hatsquid!");
+						Console.WriteLine("You spend the rest of your life in Hawaii, and get to witness The Great Hatsquid conquer the entire world.");
+						Console.WriteLine("Congratulations!"+Program.PlayerName+" has won!");
+						//Prevents looping
+						Console.WriteLine("Press enter to close the game.");
+						Console.ReadLine();
+						Environment.Exit(0);
+						break;
+					}
+				case 3:
+					{
+						Console.WriteLine("You turn and look at The Great Hatsquid. He waves at you to leave.");
+						Console.WriteLine("You nod, and begin to climb down the ladder.");
+						SnakeEater();
+						Console.WriteLine("You finally reach the bottom of the ladder. Wasn't that a lovely song?");
+						Console.WriteLine("Satisified with your journey that you gained nothing from, you head home.");
+						Console.WriteLine("Congratulations!"+Program.PlayerName + " has won!");
+						//Prevents looping
+						Console.WriteLine("Press enter to close the game.");
+						Console.ReadLine();
+						Environment.Exit(0);
+						break;
+					}
+					//error message
+				default:
+					{
+						Console.WriteLine("SOMETHING HAS GONE HORRIBLY WRONG. ABORTING PROGRAM!");
+						Console.ReadLine();
+						Environment.Exit(0);
+						break;
+					}
+			}
 		}
 		//Use when a player loses to end the game
 		public static void GameEnd(int loss)
@@ -173,6 +228,30 @@ namespace Text_Based_Adventure
 						Environment.Exit(0);
 						break;
 					}
+				case 10:
+					{
+						Console.WriteLine("Unfortunately, The Great Hatsquid decides he's not a huge fan of someone demanding things of him.");
+						Console.WriteLine("He taps his cane on the ground twice, and before you can blink you're surronded by multiple copies of The Great Hatsquid.");
+						Console.WriteLine("Each one grabs hold of one of your limbs, and what follows is not very pleasent.");
+						Console.WriteLine(Program.PlayerName + "'s adventure ends here. torn to pieces by The Great Hatsquid.");
+						Console.WriteLine("Their body parts made some lovely decorations for his tower, though!");
+						Console.WriteLine("Press any key to close the program.");
+						Console.ReadLine();
+						Environment.Exit(0);
+						break;
+					}
+				case 11:
+					{
+						Console.WriteLine("The Great Hatsquid comes down with it's cane on the top of your head, knocking you out.");
+						Console.WriteLine("Bet you wish you had a helmet, maybe you should have grabbed one when you got that sword!");
+						Console.WriteLine("When you wake up, you're back in the main hall of the tower. Wow that sucks!");
+						Console.WriteLine("If I had loops I'd make you replay the whole game, but since I don't I guess you just lose.");
+						Console.WriteLine(Program.PlayerName + "'s adventure ends here, because I can't use loops yet.");
+						Console.WriteLine("Press any key to close the program.");
+						Console.ReadLine();
+						Environment.Exit(0);
+						break;
+					}
 				//error message
 				default:
 					{
@@ -184,6 +263,58 @@ namespace Text_Based_Adventure
 					
 			}
 				
+		}
+		//Plays(writes) the song from Metal Gear Solid for a joke
+		public static void SnakeEater()
+		{
+			Console.WriteLine("Continue pressing enter to go down the ladder.");
+			Console.ReadLine();
+			Console.WriteLine("What a thrill");
+			Console.ReadLine();
+			Console.WriteLine("With darkness and silence through the night");
+			Console.ReadLine();
+			Console.WriteLine("What a thrill");
+			Console.ReadLine();
+			Console.WriteLine("I'm searching and I'll melt into you");
+			Console.ReadLine();
+			Console.WriteLine("What a fear in my heart");
+			Console.ReadLine();
+			Console.WriteLine("But you're so supreme!");
+			Console.ReadLine();
+			Console.WriteLine("");
+			Console.WriteLine("I give my life. not for honor, but for you");
+			Console.ReadLine();
+			Console.WriteLine("(Snake Eater)");
+			Console.ReadLine();
+			Console.WriteLine("In my time, there'll be no one else");
+			Console.ReadLine();
+			Console.WriteLine("Crime, it's the way I fly to you (Snake Eater)");
+			Console.ReadLine();
+			Console.WriteLine("I'm still in a dream, Snake Eater");
+			Console.ReadLine();
+			Console.WriteLine("");
+			Console.WriteLine("Someday you go through the rain");
+			Console.ReadLine();
+			Console.WriteLine("And someday you feed on a tree frog");
+			Console.ReadLine();
+			Console.WriteLine("It's ordeal, the trial to survive.");
+			Console.ReadLine();
+			Console.WriteLine("For the day we see new light");
+			Console.ReadLine();
+			Console.WriteLine("");
+			Console.WriteLine("I give my life. not for honor, but for you");
+			Console.ReadLine();
+			Console.WriteLine("(Snake Eater)");
+			Console.ReadLine();
+			Console.WriteLine("In my time, there'll be no one else");
+			Console.ReadLine();
+			Console.WriteLine("Crime, it's the way I fly to you (Snake Eater)");
+			Console.ReadLine();
+			Console.WriteLine("I'm still in a dream, Snake Eater");
+			Console.ReadLine();
+			Console.WriteLine("I'm still in a dream, Snake Eater");
+			Console.ReadLine();
+			Console.WriteLine("(I do not own the rights to the song 'Snake Eater' \n all credit goes to the owners and creators.");
 		}
     }
 }

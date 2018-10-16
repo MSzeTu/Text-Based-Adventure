@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 /*Name: SzeTu-HW5
- * Class: IGME105
+ * Class: IGME106
  * Author: Matthew Sze-Tu
  * Purpose: Initial walkway of text-based adventure
- * Recent Changes: Created and added methods
+ * Recent Changes: Made use of Game End
  */
 namespace Text_Based_Adventure
 {

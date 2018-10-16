@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-/*Name: SzeTu-HW5
+/*Name: SzeTu-HW6
  * Class: IGME105
  * Author: Matthew Sze-Tu
  * Purpose: Dungeon of Text-Based Adventure
- * Recent Changes: (No Changes)
+ * Recent Changes: Added all room puzzles
  */
 namespace Text_Based_Adventure
 {
@@ -187,8 +187,9 @@ namespace Text_Based_Adventure
 			}
 		}
 		/*Room 3
-		 * 
-		 * */
+		 * Light the dark room with a candle
+		 * Get out of the pit with either hat
+		 */
 		public void DungeonRoomThree()
 		{
 			string Answer;
@@ -276,14 +277,90 @@ namespace Text_Based_Adventure
 				Console.ReadLine();
 			}
 		}
+		/*Final room of the dungeon
+		 * Confront Hatsquid
+		 * Get out of the tower
+		 * */
 		public void HatSquidsThrone()
 		{
+			string Answer;
 			Console.WriteLine("You are standing on the very top of Hatsquid's Wonderful Tower.");
 			Console.WriteLine("The pit you've climbed out of is gone. All around you is a gorgeous view as far as the eye can see.");
 			Console.WriteLine("You walk over to the edge of the tower and look down. You are VERY high up, wouldn't want to fall now.");
 			Console.WriteLine("On the middle of the tower roof is a magnificent fabulously detailed golden throne. It looks incredibly comfy.");
 			Console.WriteLine("Sitting (Standing? You aren't quite sure) on the throne is THE Hatsquid himself.");
-			Console.WriteLine("The True Hatsquid ");
+			Console.WriteLine("The True Hatsquid  is a Black Tophat with eight tentacles coming out of the bottom.");
+			Console.WriteLine("He (we aren't quite sure how we know it's a he) carries an ornate cane. \nThe throne he's on is far too big for him");
+			Console.Write("Yet he still looks quite regal.");
+			Console.WriteLine("There's no way down from this tower (why did you come up here in the first place?). What do you want to do?");
+			Console.WriteLine("[K]neel before His Majesty.");
+			Console.WriteLine("[D]emand that he let you down from the tower.");
+			Console.WriteLine("[B]eg to be let free.");
+			Console.WriteLine("Ask [P]olitely to be let free");
+			Console.WriteLine("[A]ttack The Great Hatsquid.");
+			Console.WriteLine("[Q]uit");
+			Answer = Console.ReadLine().Trim().ToUpper();
+			if (string.IsNullOrEmpty(Answer) == true)
+			{
+				Console.WriteLine("If you aren't going to enter anything I'll just assume you don't want to play.");
+				Config.GameEnd(0);
+			}
+			Answer = Answer.Substring(0, 1);
+			switch (Answer)
+			{
+				case "Q":
+					{
+						Config.GameEnd(0);
+						break;
+					}
+				case "K":
+					{
+						Console.WriteLine("You respectfully kneel before Hatsquid. He seems very pleased.");
+						Console.WriteLine("You swear your life to him, citing your puzzle-solving skills as why he should accept you.");
+						Console.WriteLine("He accepts!");
+						Config.WinGame(1);
+						break;
+					}
+				case "D":
+					{
+						Console.WriteLine("Well that's not very polite.");
+						Console.WriteLine("You loudly and aggressively demand that The Great Hatsquid lets you down from his Wonderful Tower.");
+						Console.WriteLine("He seems incredibly alarmed. Seems no one has ever taken that tone with him.");
+						Console.WriteLine("Congrats! You're unique!");
+						Config.GameEnd(10);
+						break;
+					}
+				case "B":
+					{
+						Console.WriteLine("You grovel and beg to be let down from the tower.");
+						Console.WriteLine("It's pretty embarrassing to watch.");
+						Console.WriteLine("The Great Hatsquid seems to laugh at you (again, hard to tell when he doesn't actually have a mouth).");
+						Console.WriteLine("You ramp up the act. You're really crying now, rivers of tears and all. \nYou consider trying to kiss it's tentacles but decide against it.");
+						Console.WriteLine("The Great Hatsquid is moved by your tears!");
+						Config.WinGame(2);
+						break;
+					}
+				case "P":
+					{
+						Console.WriteLine("You ask very politely if The Great Hatsquid can help you get down from his Wonderful Tower.");
+						Console.WriteLine("He listens attentively (He doesn't even have ears how is he doing this?) and nods (which moves his entire body/hat).");
+						Console.WriteLine("He gestures with a tentacle to the side of the tower.");
+						Console.WriteLine("You walk over to where he gestured. Where once there was nothing, there is now a very very very tall ladder.");
+						Console.WriteLine("Press enter to begin descending the ladder.");
+						Console.ReadLine();
+						Config.WinGame(3);
+						break;
+					}
+				case "A":
+					{
+						Console.WriteLine("You draw your sword (Where did you get a sword? Why didn't you tell me? \nI'm the narrator I need to know these things!");
+						Console.WriteLine("and lunge forwards at The Great Hatsquid.");
+						Console.WriteLine("The Great Hatsquid jumps into the air, causing you to stab into the throne. Come on man, \nthat was a perfectly good throne!");
+						Config.GameEnd(11);
+						break;
+					}
+			}
+
 		}
 	}
 }
