@@ -282,7 +282,8 @@ namespace Text_Based_Adventure
 			Console.WriteLine("The pit you've climbed out of is gone. All around you is a gorgeous view as far as the eye can see.");
 			Console.WriteLine("You walk over to the edge of the tower and look down. You are VERY high up, wouldn't want to fall now.");
 			Console.WriteLine("On the middle of the tower roof is a magnificent fabulously detailed golden throne. It looks incredibly comfy.");
-			Console.WriteLine("");
+			Console.WriteLine("Sitting (Standing? You aren't quite sure) on the throne is THE Hatsquid himself.");
+			Console.WriteLine("The True Hatsquid ");
 		}
 	}
 }
