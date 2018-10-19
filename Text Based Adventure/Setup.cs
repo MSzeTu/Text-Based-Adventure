@@ -25,11 +25,7 @@ namespace Text_Based_Adventure
 			Console.Write("Please enter your name.");
             //Remove empty space from name
 			TempName = Console.ReadLine().Trim();
-			if (string.IsNullOrEmpty(TempName) == true)
-			{
-				Console.WriteLine("If you won't enter a name, I'll simply call you " + Program.PlayerName + "!");
-                TempName = "Lazy";
-			}
+            TempName = Config.AntiEmpty(TempName);
 			return TempName;
 		}
 
@@ -42,20 +38,28 @@ namespace Text_Based_Adventure
 			Console.Write("Would you like to play the Hatsquid's Great and Wonderful Tower?");
 			PlayGame = Console.ReadLine().Trim().ToUpper();
             //Prevent error if nothing entered
-            if(string.IsNullOrEmpty(PlayGame) == true)
-            {
-                PlayGame = "No";
-            }
+            PlayGame = Config.AntiEmpty(PlayGame);
 			//Convert to first letter only
 			PlayGame = PlayGame.Substring(0, 1);
-			//Convert first character to uppercase
-			if (PlayGame != "Y")
+            //Repeats until valid input
+            while (PlayGame != "Y" && PlayGame != "N")
+            {
+                Console.WriteLine("That's not how questions work. Please enter Yes or No.");
+                PlayGame = Console.ReadLine().Trim().ToUpper();
+                if (string.IsNullOrEmpty(PlayGame) == false)
+                {
+                    PlayGame = PlayGame.Substring(0, 1);
+                }
+                Console.WriteLine(PlayGame);
+            }
+			if (PlayGame == "Y")
 			{
-				Console.WriteLine("Well you don't have a choice anyways, here we goooooooooooooooooo!");
+				Console.WriteLine("ALRIGHT LET'S GOOOOOOOOOOOOOOOOOOOOO");
 			}
-			else
+			else if(PlayGame == "N")
 			{
-				Console.WriteLine("Alright then, lets goooooooooooo!");
+				Console.WriteLine("Oh, uh, okay then. I'm sorry I asked... Bye Bye.");
+                Config.GameEnd(0);
 			}
 			Console.BackgroundColor = ConsoleColor.DarkMagenta;
 			Console.ForegroundColor = ConsoleColor.Cyan;

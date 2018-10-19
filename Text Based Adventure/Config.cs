@@ -316,5 +316,16 @@ namespace Text_Based_Adventure
 			Console.ReadLine();
 			Console.WriteLine("(I do not own the rights to the song 'Snake Eater' \n all credit goes to the owners and creators.");
 		}
+        //Prevents errors when no input is entered
+        public static string AntiEmpty(string input)
+        {
+            while (string.IsNullOrEmpty(input) == true)
+            {
+                Console.WriteLine("You did not enter anything. Please enter SOMETHING at all.");
+                input = Console.ReadLine().Trim().ToUpper();
+            }
+            input = input.Trim().ToUpper();
+            return input;
+        }
     }
 }

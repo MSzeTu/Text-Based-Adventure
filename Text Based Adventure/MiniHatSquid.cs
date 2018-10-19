@@ -55,6 +55,7 @@ namespace Text_Based_Adventure
 		//Interactions with initial Hatsquids.
 		public static void FirstInteraction()
 		{
+            Boolean Proper = false;
 			String Answer;
 			Console.WriteLine("The Supreme Hatsquid is waving it's money around, almost... showing it off? \nis this Hatsquid flexing on you?");
 			Console.WriteLine("The Dunce Hatsquid is sitting there doing nothing, since it kind of lacks tentacles.");
@@ -66,53 +67,51 @@ namespace Text_Based_Adventure
 			Console.WriteLine("[S]how the SupremeSquid your fancy wristwatch");
 			//Receive Answer
 			Answer = Console.ReadLine().Trim().ToUpper();
-			//Default if empty
-			if (string.IsNullOrEmpty(Answer) == true)
-			{
-				Console.WriteLine("Ah a rulebreaker huh? I bet a rulebreaker like you would try to take that Squid's Lunchmoney!");
-				Console.WriteLine("You try to take the SupremeSquid's money.");
-				Config.GameEnd(3);
-			}
-			//converts to first letter
-			Answer = Answer.Substring(0, 1);
-			Console.WriteLine("");
-			if (Answer != "Q")
-			{
-				if (Answer != "K")
-				{
-					if (Answer != "T")
-					{
-						if (Answer == "S")
-						{
-							Console.WriteLine("You show off your expensive watch to the SupremeSquid.");
-							Console.WriteLine("In return, it show's off seven watches on each tentacle that are even more expensive and fancy.");
-							Console.WriteLine("Satisifed that it seems to be better than you, the SupremeSquid picks up the DunceSquid and phases through the floor.");
-							Console.WriteLine("Press enter to continue forwards.");
-							Console.ReadLine();
-						}
-						else
-						{
-							Console.WriteLine("Ah a rulebreaker huh? I bet a rulebreaker like you would try to take that Squid's Lunchmoney!");
-							Console.WriteLine("You try to take the SupremeSquid's money.");
-							Config.GameEnd(3);
-						}
-					}
-					else
-					{
-						Console.WriteLine("You try to take the SupremeSquid's money.");
-						Config.GameEnd(3);
-					}
-				}
-				else
-				{
-					Console.WriteLine("You rear back and punt the DunceSquid with all your might!");
-					Config.GameEnd(2);
-				}
-			}
-			else
-			{
-				Config.GameEnd(0);
-			}
+            while (Proper == false)
+            {
+                //Try again if empty
+                Answer = Config.AntiEmpty(Answer);
+                //converts to first letter
+                Answer = Answer.Substring(0, 1);
+                Console.WriteLine("");
+                if (Answer != "Q")
+                {
+                    if (Answer != "K")
+                    {
+                        if (Answer != "T")
+                        {
+                            if (Answer == "S")
+                            {
+                                Console.WriteLine("You show off your expensive watch to the SupremeSquid.");
+                                Console.WriteLine("In return, it show's off seven watches on each tentacle that are even more expensive and fancy.");
+                                Console.WriteLine("Satisifed that it seems to be better than you, the SupremeSquid picks up the DunceSquid and phases through the floor.");
+                                Console.WriteLine("Press enter to continue forwards.");
+                                Proper = true;
+                                Console.ReadLine();
+                            }
+                            else
+                            {
+                                Console.WriteLine("You did not enter a valid input. Please enter Q, K, T, or S.");
+                                Answer = Console.ReadLine().Trim().ToUpper();
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("You try to take the SupremeSquid's money.");
+                            Config.GameEnd(3);
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("You rear back and punt the DunceSquid with all your might!");
+                        Config.GameEnd(2);
+                    }
+                }
+                else
+                {
+                    Config.GameEnd(0);
+                }
+            }
 		}
 	}
 }

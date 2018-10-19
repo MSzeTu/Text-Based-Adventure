@@ -14,37 +14,37 @@ namespace Text_Based_Adventure
 	class Walkway
 	{
 		Config Config = new Config();
-		//Ground Map
-		//Gate
-		//Straight road
-		//Gnarled trees and bushes lining trail (Blocking E/W)
-		//Wooden Bridge 
-		//Moat
-		//Traveling E/W off Bridge will lead to instant game over in moat
-		//Large Open Steel gate into giant stone tower
+        //Ground Map
+        //Gate
+        //Straight road
+        //Gnarled trees and bushes lining trail (Blocking E/W)
+        //Wooden Bridge 
+        //Moat
+        //Traveling E/W off Bridge will lead to instant game over in moat
+        //Large Open Steel gate into giant stone tower
 
-		//Explore the Yard
-		public void ExploreWalk()
-		{
+        //Explore the Yard
+        public void ExploreWalk()
+        {
             //Path and step variables
-			const int PATH_DISTANCE = 50;
-			String StepsTaken;
-			//Begin Path
-			Console.WriteLine("You stand at the start of a dirt path. \nIn the distance you can see the looming silhouette of HatSquid's Great and Wonderful Tower");
-			Console.Write("How many steps would you like to take down the path?");
-			StepsTaken = Console.ReadLine();
-			//Test if can parse
-			int Steps;
-			Boolean CanParse = int.TryParse(StepsTaken, out Steps);
-			if (CanParse == false)
-			{
-				Console.WriteLine("You did not enter a valid number.");
-				Console.Write("Suddenly, you pass out for absolutely no reason.");
-				Console.WriteLine("\nWhen you come to, you're at a wooden bridge over a moat, standing before a steel door.");
-			}
-
+            const int PATH_DISTANCE = 50;
+            String StepsTaken;
+            //Begin Path
+            Console.WriteLine("You stand at the start of a dirt path. \nIn the distance you can see the looming silhouette of HatSquid's Great and Wonderful Tower");
+            Console.Write("How many steps would you like to take down the path?");
+            StepsTaken = Console.ReadLine();
+            //Test if can parse
+            int Steps;
+            Boolean CanParse = int.TryParse(StepsTaken, out Steps);
+            while (CanParse == false)
+            {
+                Console.WriteLine("You did not enter a valid number.");
+                Console.Write("Please enter a valid integer.");
+                StepsTaken = Console.ReadLine();
+                CanParse = int.TryParse(StepsTaken, out Steps);
+            }           
 			//Show number of extra steps if overshot.
-			else if (Steps >= PATH_DISTANCE)
+		     if (Steps >= PATH_DISTANCE)
 			{
 				Console.Write("You took " + Steps + " steps.");
 				Steps = Steps - PATH_DISTANCE;

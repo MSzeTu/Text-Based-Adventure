@@ -55,7 +55,7 @@ namespace Text_Based_Adventure
             Console.WriteLine("The hallway ends at a stone wall with an extremely tiny door at the bottom, only big enough for maybe a mouse.");
             Console.WriteLine("");
             //Describe each door
-            Console.WriteLine("The first door on the left has a sign on it that says its the pool. \nThere is a small stream of water leaking out from under the door.");
+            Console.WriteLine("The first door on the left has a sign on it that says it's the pool. \nThere is a small stream of water leaking out from under the door.");
             Console.WriteLine("The second door on the left is labeled as the upside-down-house. The door is, fittingly, upside down.");
             Console.WriteLine("The first door on the right is labeled as the kitchen. The door is actually just on fire. You're not sure why.");
             Console.WriteLine("The second door on the right is labeled as the wardrobe. There is nothing of note about that door otherwise.");
@@ -69,6 +69,7 @@ namespace Text_Based_Adventure
 			Dungeon Dungeon1 = new Dungeon();
 			Boolean Pass = false;
 			string Answer;
+            Boolean Proper = false;
 			Console.WriteLine("With that taken care of, which room do you want to go to? (Enter the bracketed letter to choose.):");
 			Console.WriteLine("The [P]ool");
 			Console.WriteLine("The [U]pside-Down House");
@@ -77,57 +78,62 @@ namespace Text_Based_Adventure
 			Console.WriteLine("The [S]mall Door");
 			Console.WriteLine("[Q]uit (this is not a room, this WILL quit the game.)");
 			Answer = Console.ReadLine().Trim().ToUpper();
-			if (String.IsNullOrEmpty(Answer) == true)
-			{
-				Console.WriteLine("If you're not going to answer at all I'll just assume you don't want to play.");
-				Config.GameEnd(0);
-			}
-			Answer = Answer.Substring(0, 1);
-			switch (Answer)
-			{
-				case "P":
-					{
-						Pool();
-						break;
-					}
-				case "U":
-					{
-						UpsideDown();
-						break;
-					}
-				case "K":
-					{
-						Kitchen();
-						break;
-					}
-				case "W":
-					{
-						Wardrobe();
-						break;
-					}
-				case "S":
-					{
-						Pass = SmallDoor();
-						if (Pass == true)
-						{
-							Dungeon1.DungeonRoomOne();
-							Dungeon1.DungeonRoomTwo();
-							Dungeon1.DungeonRoomThree();
-							Dungeon1.HatSquidsThrone();
-						}													
-						break;
-					}
-				case "Q":
-					{
-						Config.GameEnd(0);
-						break;
-					}
-				default:
-					{
-						Console.WriteLine("If you don't want to go anywhere properly then I guess you'll just go swimming.");
-						Pool();
-						break;
-					}
+            while (Proper == false)
+            {
+                Answer = Config.AntiEmpty(Answer);
+			    Answer = Answer.Substring(0, 1);           
+                switch (Answer)
+                {
+                    case "P":
+                        {
+                            Pool();
+                            Proper = true;
+                            break;
+                        }
+                    case "U":
+                        {
+                            UpsideDown();
+                            Proper = true;
+                            break;
+                        }
+                    case "K":
+                        {
+                            Kitchen();
+                            Proper = true;
+                            break;
+                        }
+                    case "W":
+                        {
+                            Wardrobe();
+                            Proper = true;
+                            break;
+                        }
+                    case "S":
+                        {
+                            Pass = SmallDoor();
+                            if (Pass == true)
+                            {
+                                Dungeon1.DungeonRoomOne();
+                                Dungeon1.DungeonRoomTwo();
+                                Dungeon1.DungeonRoomThree();
+                                Dungeon1.HatSquidsThrone();
+                            }
+                            Proper = true;
+                            break;
+                        }
+                    case "Q":
+                        {
+                            Config.GameEnd(0);
+                            break;
+                        }
+                    default:
+                        {
+                            Console.WriteLine("You did not enter a valid input.");
+                            Console.WriteLine("Your options are Q, P, U, K, W, or S");
+                            Answer = Console.ReadLine().Trim().ToUpper();
+                            break;
+                        }
+                }
 			}
 		}
 		//Pool Room 
@@ -169,7 +175,7 @@ namespace Text_Based_Adventure
 		public void Wardrobe()
 		{
 			Console.WriteLine("You open the door to the Wardrobe and enter.");
-			Console.WriteLine("The room is filled with coatstands. Coatstands everywhere. /nEvery single coatstand has at least one hat on it.");
+			Console.WriteLine("The room is filled with coatstands. Coatstands everywhere. \nEvery single coatstand has at least one hat on it.");
 			Console.WriteLine("There are also countless hooks on the walls, each hook containing a hat.");
 			Console.WriteLine("There are Baseball caps, Dunce Caps, Top hats, helmets, turbans, fedoras, fezs, beanies, berets.");
 			Console.WriteLine("You get the idea, there are a LOT of hats.");
@@ -179,64 +185,64 @@ namespace Text_Based_Adventure
 		//Small Door
 		public Boolean SmallDoor()
 		{
+            Boolean Proper = false;
 			String Answer;
 			Boolean Pass = false;
 			Console.WriteLine("You go to the small door and bend down low to open it's tiny handle.");
 			Console.WriteLine("The door swings open. Suddenly, you're standing in HUGE room with a massive door in front of you.");
 			Console.WriteLine("In the room is the SupremeSquid again, as well as a table with a cookie that's labeled 'Eat me'.");
 			Console.WriteLine("No you do not need to file a copyright complaint.");
-			Console.WriteLine("How do you want to deal with this door?(Enter the bracketed letter to choose.)");
-			Console.WriteLine("[A]sk Supremesquid for help?");
-			Console.WriteLine("[O]pen the door on your own?");
-			Console.WriteLine("[E]at the cookie?");
-			Console.WriteLine("[Q]uit?");
-			Answer = Console.ReadLine().Trim().ToUpper();
-			if (String.IsNullOrEmpty(Answer) != true)
-			{
-				Answer = Answer.Substring(0, 1);
-				if (Answer != "Q")
-				{
-					if (Answer != "A")
-					{
-						if (Answer != "O")
-						{
-							if (Answer == "E")
-							{
-								Console.WriteLine("You pick up the cookie. It's peanut-butter flavored!");
-								Config.GameEnd(4);
-							}
-							else
-							{
-								Console.WriteLine("You did not enter a valid answer, I'm just going to assume you want to open the door.");
-								DoorOpen();
-								Pass = true;
-							}
-						}
-						else
-						{
-							DoorOpen();
-							Pass = true;
-						}
-					}
-					else
-					{
-						Console.WriteLine("You ask the SupremeSquid for help. You feel like it laughs at you?");
-						Console.WriteLine("It's hard to tell when it doesn't have a face. Or a mouth.");
-						Console.WriteLine("Nevertheless, it floats into the air and turns the doorhandle.");
-						Console.WriteLine("The massive door swings outwards, revealing a hole in the floor. Hurray!");
-						Pass = true;
-					}
-				}
-				else
-				{					
-					Config.GameEnd(0);
-				}
-			}
-			else
-			{
-				Console.WriteLine("If you aren't going to enter anything, I'll just assume you don't want to play at all.");
-				Config.GameEnd(0);
-			}
+            //Repeats until valid input
+            while (Proper == false)
+            {
+                Console.WriteLine("How do you want to deal with this door?(Enter the bracketed letter to choose.)");
+                Console.WriteLine("[A]sk Supremesquid for help?");
+                Console.WriteLine("[O]pen the door on your own?");
+                Console.WriteLine("[E]at the cookie?");
+                Console.WriteLine("[Q]uit?");
+                Answer = Console.ReadLine().Trim().ToUpper();
+                Answer = Config.AntiEmpty(Answer);
+                Answer = Answer.Substring(0, 1);
+                if (Answer != "Q")
+                {
+                    if (Answer != "A")
+                    {
+                        if (Answer != "O")
+                        {
+                                if (Answer == "E")
+                                {
+                                    Console.WriteLine("You pick up the cookie. It's peanut-butter flavored!");
+                                    Proper = true;
+                                    Config.GameEnd(4);
+                                }
+                                else
+                                {                               
+                                    Console.WriteLine("You did not enter a valid answer, Please try again.");                                    
+                                }
+                        }
+                        else
+                        {
+                            DoorOpen();
+                            Proper = true;
+                            Pass = true;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("You ask the SupremeSquid for help. You feel like it laughs at you?");
+                        Console.WriteLine("It's hard to tell when it doesn't have a face. Or a mouth.");
+                        Console.WriteLine("Nevertheless, it floats into the air and turns the doorhandle.");
+                        Console.WriteLine("The massive door swings outwards, revealing a hole in the floor. Hurray!");
+                        Proper = true;
+                        Pass = true;
+                    }
+                }
+                else
+                {
+                    Proper = true;
+                    Config.GameEnd(0);
+                }                
+            }
 			Console.WriteLine("Press enter to continue.");
 			Console.ReadLine();
 			return Pass;
