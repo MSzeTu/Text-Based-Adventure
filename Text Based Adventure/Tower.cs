@@ -64,8 +64,10 @@ namespace Text_Based_Adventure
 			Console.ReadLine();
 			Console.WriteLine("");
         }
-		public void RoomTravel()
+		public Boolean RoomTravel()
 		{
+            Boolean Explore = true;
+            Boolean Continue = false;
 			Dungeon Dungeon1 = new Dungeon();
 			Boolean Pass = false;
 			string Answer;
@@ -110,20 +112,72 @@ namespace Text_Based_Adventure
                         }
                     case "S":
                         {
-                            Pass = SmallDoor();
-                            if (Pass == true)
+                            Boolean SDProper = false;
+                            String Jump;                       
+                            while (SDProper == false)
                             {
-                                Dungeon1.DungeonRoomOne();
-                                Dungeon1.DungeonRoomTwo();
-                                Dungeon1.DungeonRoomThree();
-                                Dungeon1.HatSquidsThrone();
-                            }
-                            Proper = true;
+                                Pass = SmallDoor();
+                                Console.WriteLine("Do you want to jump in the hole?([Y] or [N])");
+                                Jump = Console.ReadLine().Trim().ToUpper();
+                                Jump = Config.AntiEmpty(Jump);
+                                if (Jump == "Y")
+                                {
+                                    if (Pass == true)
+                                    {
+                                        Dungeon1.DungeonRoomOne();
+                                        Continue = Dungeon1.Continue();
+                                        if (Continue == true)
+                                        {
+                                            Dungeon1.DungeonRoomTwo();
+                                            Continue = Dungeon1.Continue();
+                                        }
+                                        if (Continue == true)
+                                        {
+                                            Dungeon1.DungeonRoomThree();
+                                            Continue = Dungeon1.Continue();
+                                        }
+                                        if (Continue == true)
+                                        {
+                                            Dungeon1.HatSquidsThrone();
+                                        }
+                                        Proper = true;
+                                        SDProper = true;
+                                        if (Continue == false)
+                                        {
+                                            Proper = false;
+                                            SDProper = true;
+                                            Answer = "R";
+                                        }                                
+                                    }
+                                }
+                                else if (Jump == "N")
+                                {
+                                    Proper = true;
+                                    SDProper = true;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Please enter 'Y' or 'N'");
+                                }
+                            }                           
                             break;
                         }
                     case "Q":
                         {
                             Config.GameEnd(0);
+                            break;
+                        }
+                    case "R":
+                        {
+                            Console.WriteLine("Welcome back to the main entrance!");
+                            Console.WriteLine("Where do you want to go?");
+                            Console.WriteLine("The [P]ool");
+                            Console.WriteLine("The [U]pside-Down House");
+                            Console.WriteLine("The [K]itchen");
+                            Console.WriteLine("The [W]ardrobe");
+                            Console.WriteLine("The [S]mall Door");
+                            Console.WriteLine("[Q]uit (this is not a room, this WILL quit the game.)");
+                            Answer = Console.ReadLine().Trim().ToUpper();
                             break;
                         }
                     default:
@@ -135,6 +189,7 @@ namespace Text_Based_Adventure
                         }
                 }
 			}
+            return Explore;
 		}
 		//Pool Room 
 		public void Pool()

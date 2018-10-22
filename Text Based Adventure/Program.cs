@@ -19,7 +19,9 @@ namespace Text_Based_Adventure
         //Run main program
 		static void Main(string[] args)
 		{
+            Boolean Explore = true;
 			Boolean Die;
+            Boolean ReturnY = true;
 			//Create class objects 
 			Walkway Walk1 = new Walkway();
 			while (Reset == true)
@@ -29,22 +31,29 @@ namespace Text_Based_Adventure
 				PlayerName = Setup.Welcome();
 				Setup.Intro();
 				Walk1.ExploreWalk();
-				Die = Walk1.TowerDoor();
-				//kill player
-				if (Die == true)
-				{
-					Config.GameEnd(1);
-				}
-				//continue normally
-				Tower1.ColoredGreet();
-				Tower1.Entrance();
-				Config.BuildHatSquids();
-				MiniHatSquid.FirstInteraction();
-				Tower1.RoomTravel();
-				Tower1.RoomTravel();
-				Tower1.RoomTravel();
-				Tower1.RoomTravel();
-				Tower1.RoomTravel();
+                //allows returning to walkway
+                while (ReturnY == true)
+                {
+                    Die = Walk1.TowerDoor();
+                    //kill player
+                    if (Die == true)
+                    {
+                        Config.GameEnd(1);
+                    }
+                    //continue normally
+                    Tower1.ColoredGreet();
+                    Tower1.Entrance();
+                    Config.BuildHatSquids();
+                    MiniHatSquid.FirstInteraction();
+                    Explore = true;
+                    while (Explore == true)
+                    {
+                        Explore = Tower1.RoomTravel();
+                        ReturnY = Walk1.ReturnToWalkway();
+                        if (ReturnY == true)
+                            Explore = false;
+                    }
+                }				
 				Console.WriteLine("Press enter to Close");
 				Console.ReadLine();
 			}

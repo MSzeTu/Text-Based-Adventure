@@ -22,7 +22,7 @@ namespace Text_Based_Adventure
         //Moat
         //Traveling E/W off Bridge will lead to instant game over in moat
         //Large Open Steel gate into giant stone tower
-
+        
         //Explore the Yard
         public void ExploreWalk()
         {
@@ -42,28 +42,39 @@ namespace Text_Based_Adventure
                 Console.Write("Please enter a valid integer.");
                 StepsTaken = Console.ReadLine();
                 CanParse = int.TryParse(StepsTaken, out Steps);
-            }           
-			//Show number of extra steps if overshot.
-		     if (Steps >= PATH_DISTANCE)
-			{
-				Console.Write("You took " + Steps + " steps.");
-				Steps = Steps - PATH_DISTANCE;
-				Console.Write("This is " + Steps + " more than you needed to reach the tower.");
-				Console.WriteLine("\nYou have stopped on a wooden bridge over a moat, standing before a steel door.");
-			}
-
-			//Show number of needed steps if undershot.
-			else
-			{
-				Console.Write("You took " + Steps + " steps.");
-				Steps = PATH_DISTANCE - Steps;
-				Console.Write("This is " + Steps + " less than you needed to reach the tower.");
-				Console.Write("Suddenly, you pass out for absolutely no reason.");
-				Console.WriteLine("\nWhen you come to, you're at a wooden bridge over a moat, standing before a steel door.");
-			}
-		}
-
-		//Roll to Open the Tower door, find colored snake
+            }
+            for (int i = Steps; i < PATH_DISTANCE; i = i+Steps)
+            {
+                Console.WriteLine("You have taken a total of " + i + " steps. You have not yet reached the door.");
+                Console.WriteLine("How many more steps would you like to take?");
+                StepsTaken = Console.ReadLine();
+                CanParse = int.TryParse(StepsTaken, out Steps);
+                while (CanParse == false)
+                {
+                    Console.WriteLine("You did not enter a valid number.");
+                    Console.Write("Please enter a valid integer.");
+                    StepsTaken = Console.ReadLine();
+                    CanParse = int.TryParse(StepsTaken, out Steps);
+                }
+            }
+            Console.WriteLine("\nYou have stopped on a wooden bridge over a moat, standing before a steel door.");
+        }
+        //Return to yard from rooms
+        public Boolean ReturnToWalkway()
+        {
+            Boolean Leave = false;
+            String Answer;
+            Console.WriteLine("Do you want to return to the walkway [Y] or [N]?");
+            Answer = Console.ReadLine().Trim().ToUpper();
+            Answer = Config.AntiEmpty(Answer);
+            if (Answer == "Y")
+            {
+                Console.WriteLine("You go back through the front door, which closes behind you.");
+                Leave = true;
+            }
+            return Leave;
+        }
+		//Roll to Open the Tower door, find colored orb
 		public Boolean TowerDoor()
 		{
 			Boolean Die = false;

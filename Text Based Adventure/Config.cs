@@ -246,7 +246,9 @@ namespace Text_Based_Adventure
 						Console.WriteLine("Bet you wish you had a helmet, maybe you should have grabbed one when you got that sword!");
 						Console.WriteLine("When you wake up, you're back in the main hall of the tower. Wow that sucks!");
 						Console.WriteLine("Great, now you have to go all the way back up!");
-						break;
+                        Console.BackgroundColor = ConsoleColor.DarkMagenta;
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        break;
 					}
 				//error message
 				default:

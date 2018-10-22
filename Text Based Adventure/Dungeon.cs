@@ -371,5 +371,34 @@ namespace Text_Based_Adventure
 				}
 			}
 		}
+        //Allow user to continue to next room or go back to the main building
+        public Boolean Continue()
+        {
+            Boolean GoForth = true;
+            string Answer;
+            Boolean Proper = false;
+            while (Proper == false)
+            {
+                Console.WriteLine("Do you want to move on to the next room? [Y] or [N]");
+                Answer = Console.ReadLine().Trim().ToUpper();
+                Answer = Config.AntiEmpty(Answer);
+                Answer = Answer.Substring(0, 1);
+                if (Answer == "Y")
+                {
+                    GoForth = true;
+                    Proper = true;
+                }
+                else if (Answer == "N")
+                {
+                    GoForth = false;
+                    Console.WriteLine("You are magically transported back to the entryway of The Wonderful Tower.");
+                    Proper = true;
+                }
+                else
+                    Console.WriteLine("Please enter 'Y' or 'N'.");
+            }
+            
+            return GoForth;
+        }
 	}
 }
