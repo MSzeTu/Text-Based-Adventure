@@ -15,36 +15,39 @@ namespace Text_Based_Adventure
 	{
         //Setup Playername attribute
 		public static String PlayerName = "Lazy";
+		public static Boolean Reset = true;
         //Run main program
 		static void Main(string[] args)
 		{
 			Boolean Die;
 			//Create class objects 
 			Walkway Walk1 = new Walkway();
-            Tower Tower1 = new Tower();
-			
-            //Begin Main process
-            PlayerName = Setup.Welcome();
-			Setup.Intro();
-			Walk1.ExploreWalk();
-			Die = Walk1.TowerDoor();
-			//kill player
-			if(Die == true)
+			while (Reset == true)
 			{
-				Config.GameEnd(1);
+				Tower Tower1 = new Tower();
+				//Begin Main process
+				PlayerName = Setup.Welcome();
+				Setup.Intro();
+				Walk1.ExploreWalk();
+				Die = Walk1.TowerDoor();
+				//kill player
+				if (Die == true)
+				{
+					Config.GameEnd(1);
+				}
+				//continue normally
+				Tower1.ColoredGreet();
+				Tower1.Entrance();
+				Config.BuildHatSquids();
+				MiniHatSquid.FirstInteraction();
+				Tower1.RoomTravel();
+				Tower1.RoomTravel();
+				Tower1.RoomTravel();
+				Tower1.RoomTravel();
+				Tower1.RoomTravel();
+				Console.WriteLine("Press enter to Close");
+				Console.ReadLine();
 			}
-			//continue normally
-			Tower1.ColoredGreet();
-            Tower1.Entrance();
-			Config.BuildHatSquids();
-			MiniHatSquid.FirstInteraction();
-			Tower1.RoomTravel();
-			Tower1.RoomTravel();
-			Tower1.RoomTravel();
-			Tower1.RoomTravel();
-			Tower1.RoomTravel();
-			Console.WriteLine("Press enter to Close");
-			Console.ReadLine();
 		}
 		
 

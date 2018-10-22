@@ -245,11 +245,7 @@ namespace Text_Based_Adventure
 						Console.WriteLine("The Great Hatsquid comes down with it's cane on the top of your head, knocking you out.");
 						Console.WriteLine("Bet you wish you had a helmet, maybe you should have grabbed one when you got that sword!");
 						Console.WriteLine("When you wake up, you're back in the main hall of the tower. Wow that sucks!");
-						Console.WriteLine("If I had loops I'd make you replay the whole game, but since I don't I guess you just lose.");
-						Console.WriteLine(Program.PlayerName + "'s adventure ends here, because I can't use loops yet.");
-						Console.WriteLine("Press any key to close the program.");
-						Console.ReadLine();
-						Environment.Exit(0);
+						Console.WriteLine("Great, now you have to go all the way back up!");
 						break;
 					}
 				//error message
