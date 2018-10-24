@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-/*Name: SzeTu-HW6
+/*Name: SzeTu-HW7
  * Class: IGME105
  * Author: Matthew Sze-Tu
  * Purpose: Main tower of text-based adventure
- * Recent Changes: Added rooms
+ * Recent Changes: LOOPS
  */
 namespace Text_Based_Adventure
 {
@@ -64,6 +64,7 @@ namespace Text_Based_Adventure
 			Console.ReadLine();
 			Console.WriteLine("");
         }
+        //Allows travel from room to room
 		public Boolean RoomTravel()
 		{
             Boolean Explore = true;

@@ -3,35 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-/*Name: SzeTu-HW6
+/*Name: SzeTu-HW7
  * Class: IGME105
  * Author: Matthew Sze-Tu
  * Purpose: Dungeon of Text-Based Adventure
- * Recent Changes: Added all room puzzles
+ * Recent Changes: LOOPS
  */
 namespace Text_Based_Adventure
 {
 	class Dungeon
 	{
-		//Dungeon
-		//New spawn point
-		//Room 2
-		//Large chasm, rickety Wooden bridge spanning it
-		//Basket Holding matches, saw, kite, tape, and a candle
-		//Player can cut or burn the bridge
-		//If player tries to cross holding anything, bridge snaps
-		//Player can cross empty handed
-		//Room 3
-		// Narrow stone pathway over another chasm
-		//While crossing pathway, player will hear a *swish* 
-		//If player moves left or right, they fall and die
-		//Possibly put a timed delay?
-		//Player ducks, scythe swings over their head. 
-		//Potentially do 2 more times?
-		//Room 4
-		//Final boss/puzzle which unlocks exit
-		//exit to win
-
 		/*Room 1
 		/Simple, two key puzzle
 		Don't use either key to continue */
