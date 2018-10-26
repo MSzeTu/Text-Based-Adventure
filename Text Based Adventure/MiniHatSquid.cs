@@ -14,11 +14,14 @@ namespace Text_Based_Adventure
 	class MiniHatSquid
 	{
 		//Attributes for Hatsquid
-		public int Health;
+		public int[] AHealth = { 1,5,50,90,10000,41,8,21,60,666};
+        public int Health;
 		public String Hat;
-		public int TentacleNum;
-		public String Accesories;
-		public String Mood;
+		public String[] AAccesories = {"a Lolipop","a Water Gun","a miniature star","lots of swords","tiny clones of itself","diamonds and other jewels","fire. Just actually fire","a deck of cards","a mirror","nothing"};
+        public String Accesories;
+        public String[] AMood = { "dumb","self-Centered","smart","angry","sad","wistful","lustful","greedy","hungry","sleepy"};
+        public String Mood;
+        public int TentacleNum;
 
 		//MiniHatSquid Descriptions
 		/*SupremeSquid
@@ -42,8 +45,8 @@ namespace Text_Based_Adventure
 			Console.WriteLine("You've never seen a Hatsquid before. Each one consists of a number of tentacles extending out of the bottom of a hat.");
 			Console.WriteLine("");
 			//Describe SupremeSquid
-			Console.WriteLine("The first Hatsquid is wearing a " + SupremeSquid.Hat + " and has " + SupremeSquid.TentacleNum + "Tentacles.");
-			Console.WriteLine("It's carrying and wearing multiple " + SupremeSquid.Accesories + " and seems to be incredibly " + SupremeSquid.Mood);
+			Console.WriteLine("The first Hatsquid is wearing a " + SupremeSquid.Hat + " and has " + SupremeSquid.TentacleNum + " Tentacles.");
+			Console.WriteLine("It's wearing multiple fancy wristwatches and carrying a wad of cash as well as " + SupremeSquid.Accesories + ". \nIt seems to be incredibly " + SupremeSquid.Mood);
 			Console.WriteLine("");
 			//Describe DunceSquid
 			Console.WriteLine("The second Hatsquid is wearing a " + DunceSquid.Hat + " and has " + DunceSquid.TentacleNum + " tentacles, \nso you're not actually sure how it even moved to greet you.");

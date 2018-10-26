@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 /*Name: SzeTu-HW7
  * Class: IGME105
  * Author: Matthew Sze-Tu
@@ -11,7 +7,7 @@ using System.Threading.Tasks;
  */
 namespace Text_Based_Adventure
 {
-	class Config
+    class Config
 	{		
 		//Roll die with specified sides
 		public static int DiceRoll(int min, int max)
@@ -31,19 +27,20 @@ namespace Text_Based_Adventure
 		//Create MiniHatSquids
 		public static void BuildHatSquids()
 		{
+            int ArrayChoice = Config.DiceRoll(0, 10);
 			//Create Mini Hat Squids
 			MiniHatSquid DunceSquid = new MiniHatSquid();
 			MiniHatSquid SupremeSquid = new MiniHatSquid();
-			//Set attributes
-			DunceSquid.Health = 1;
-			DunceSquid.TentacleNum = 0;
+            //Set attributes
+            DunceSquid.Health = DunceSquid.AHealth[0];
+            DunceSquid.TentacleNum = 0;
 			DunceSquid.Hat = "Dunce Cap";
-			DunceSquid.Accesories = "nothing";
-			DunceSquid.Mood = "Dumb";
-			SupremeSquid.Health = 50;
+            DunceSquid.Accesories = DunceSquid.AAccesories[9];
+			DunceSquid.Mood = DunceSquid.AMood[0];
+            SupremeSquid.Health = SupremeSquid.AHealth[ArrayChoice];
 			SupremeSquid.TentacleNum = 6;
-			SupremeSquid.Accesories = "wads of cash, Watches, and a Bracelet.";
-			SupremeSquid.Mood = "Self-centered";
+            SupremeSquid.Accesories = SupremeSquid.AAccesories[ArrayChoice];
+            SupremeSquid.Mood = SupremeSquid.AMood[ArrayChoice];
 			SupremeSquid.Hat = "Supreme Brand Flat-brimmed Cap.";
 			//Call Greeting
 			MiniHatSquid.Greeting(SupremeSquid, DunceSquid);
