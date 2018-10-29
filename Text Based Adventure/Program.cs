@@ -3,19 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-/*Name: SzeTu-HW7
+/*Name: SzeTu-HW8
  * Class: IGME105
  * Author: Matthew Sze-Tu
  * Purpose: Create a text-based adventure
- * Recent Changes: LOOPS
+ * Recent Changes: Created Arrays
  */
 namespace Text_Based_Adventure
 {
 	class Program
 	{
         //Setup Playername attribute
+        public static int ASize = 10;
 		public static String PlayerName = "Lazy";
 		public static Boolean Reset = true;
+        public static int[] TentacleNum = new int[ASize];
         //Run main program
 		static void Main(string[] args)
 		{
@@ -29,6 +31,7 @@ namespace Text_Based_Adventure
 				Tower Tower1 = new Tower();
 				//Begin Main process
 				PlayerName = Setup.Welcome();
+                Setup.CollectInput();
 				Setup.Intro();
 				Walk1.ExploreWalk();
                 //allows returning to walkway

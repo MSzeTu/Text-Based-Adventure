@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-/*Name: SzeTu-HW7
+/*Name: SzeTu-HW8
  * Class: IGME105
  * Author: Matthew Sze-Tu
  * Purpose: Main tower of text-based adventure
- * Recent Changes: LOOPS
+ * Recent Changes: No Changes
  */
 namespace Text_Based_Adventure
 {

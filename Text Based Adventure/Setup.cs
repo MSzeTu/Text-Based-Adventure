@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-/*Name: SzeTu-HW7
+/*Name: SzeTu-HW8
  * Class: IGME105
  * Author: Matthew Sze-Tu
  * Purpose: Sets up the text-based adventure
- * Recent Changes: LOOPS
+ * Recent Changes: Created new method to collect input and store in Array
  */
 namespace Text_Based_Adventure
 {
@@ -70,22 +70,41 @@ namespace Text_Based_Adventure
             Console.WriteLine("\nGood Luck!");
         }
         //Collect user input and store in array for later
-        public static int[] CollectInput()
+        public static void CollectInput()
         {
-            int k = 10;
-            int[] Input = new int[k];
             String SChoice;
             int Choice;
+            Boolean CanParse;
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("I am now going to collect some data from you to personalize your experience.");
             Console.WriteLine("You will have to enter 10 numbers. Please ensure each number is between 10 and 100.");
-            for (int i = 0; i < k - 1; i++)
+            for (int i = 0; i < Program.ASize; i++)
             {
-                Console.WriteLine("Please enter a number between 10 and 100. You have entered " + i + 1 + " out of 10 numbers.");
+                Console.WriteLine("Please enter a number between 10 and 100. You have entered " + i + " out of " + Program.ASize + " numbers.");
                 SChoice = Console.ReadLine();
                 SChoice = Config.AntiEmpty(SChoice);
-            }           
+                CanParse = int.TryParse(SChoice, out Choice);
+                while (Choice < 10 || Choice > 100)
+                {
+                    CanParse = false;
+                    while (CanParse == false)
+                    {                       
+                        Console.WriteLine("You did not enter a valid number");
+                        Console.WriteLine("Please enter a number between 10 and 100.");
+                        SChoice = Console.ReadLine();
+                        SChoice = Config.AntiEmpty(SChoice);
+                        CanParse = int.TryParse(SChoice, out Choice);
+                    }
+                    
+                }
+                Program.TentacleNum[i] = Choice;
+            }
+            Console.WriteLine("Thank you for entering numbers! You have chosen:");
+            foreach (int i in Program.TentacleNum)
+            {
+                Console.WriteLine(i);
+            }
         }
 	}
 }

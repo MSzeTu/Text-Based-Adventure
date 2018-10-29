@@ -1,9 +1,9 @@
 ﻿using System;
-/*Name: SzeTu-HW7
+/*Name: SzeTu-HW8
  * Class: IGME105
  * Author: Matthew Sze-Tu
  * Purpose: Configure method of text-based adventure
- * Recent Changes: LOOPS
+ * Recent Changes: Set HatSquid variables to randomly selected Array Value
  */
 namespace Text_Based_Adventure
 {
@@ -38,7 +38,7 @@ namespace Text_Based_Adventure
             DunceSquid.Accesories = DunceSquid.AAccesories[9];
 			DunceSquid.Mood = DunceSquid.AMood[0];
             SupremeSquid.Health = SupremeSquid.AHealth[ArrayChoice];
-			SupremeSquid.TentacleNum = 6;
+            SupremeSquid.TentacleNum = Program.TentacleNum[ArrayChoice];
             SupremeSquid.Accesories = SupremeSquid.AAccesories[ArrayChoice];
             SupremeSquid.Mood = SupremeSquid.AMood[ArrayChoice];
 			SupremeSquid.Hat = "Supreme Brand Flat-brimmed Cap.";

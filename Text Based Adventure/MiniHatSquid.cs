@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-/*Name: SzeTu-HW7
+/*Name: SzeTu-HW8
  * Class: IGME105
  * Author: Matthew Sze-Tu
  * Purpose: Miniature HatSquids
- * Recent Changes: LOOPS
+ * Recent Changes: Set arrays and such
  */
 namespace Text_Based_Adventure
 {
@@ -22,7 +22,6 @@ namespace Text_Based_Adventure
         public String[] AMood = { "dumb","self-Centered","smart","angry","sad","wistful","lustful","greedy","hungry","sleepy"};
         public String Mood;
         public int TentacleNum;
-
 		//MiniHatSquid Descriptions
 		/*SupremeSquid
 			Wearing a Supreme Brand Flat-Brimmed Cap
@@ -46,10 +45,12 @@ namespace Text_Based_Adventure
 			Console.WriteLine("");
 			//Describe SupremeSquid
 			Console.WriteLine("The first Hatsquid is wearing a " + SupremeSquid.Hat + " and has " + SupremeSquid.TentacleNum + " Tentacles.");
+            Console.WriteLine("Hmmmmmmm that number of tentacles seems familiar actually. \nDid you cause this? I'm pretty sure you entered that number earlier.");
+            Console.WriteLine("I may need to keep a closer eye on you... \nAnyways:");
 			Console.WriteLine("It's wearing multiple fancy wristwatches and carrying a wad of cash as well as " + SupremeSquid.Accesories + ". \nIt seems to be incredibly " + SupremeSquid.Mood);
 			Console.WriteLine("");
 			//Describe DunceSquid
-			Console.WriteLine("The second Hatsquid is wearing a " + DunceSquid.Hat + " and has " + DunceSquid.TentacleNum + " tentacles, \nso you're not actually sure how it even moved to greet you.");
+			Console.WriteLine("The second Hatsquid is wearing a " + DunceSquid.Hat + " and has 0 tentacles, \nso you're not actually sure how it even moved to greet you.");
 			Console.WriteLine("It is carrying " + DunceSquid.Accesories + " and seems extremely " + DunceSquid.Mood);
 			//Continue Greeting
 			Console.WriteLine("");

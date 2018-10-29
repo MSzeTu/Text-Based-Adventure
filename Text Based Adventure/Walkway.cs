@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-/*Name: SzeTu-HW7
- * Class: IGME106
+/*Name: SzeTu-HW8
+ * Class: IGME105
  * Author: Matthew Sze-Tu
  * Purpose: Initial walkway of text-based adventure
- * Recent Changes: LOOPS
+ * Recent Changes: Tells player if they overshot the door
  */
 namespace Text_Based_Adventure
 {
@@ -56,6 +56,10 @@ namespace Text_Based_Adventure
                     StepsTaken = Console.ReadLine();
                     CanParse = int.TryParse(StepsTaken, out Steps);
                 }
+            }
+            if (Steps > 50)
+            {
+                Console.WriteLine("The path was only 50 steps long!");
             }
             Console.WriteLine("\nYou have stopped on a wooden bridge over a moat, standing before a steel door.");
         }
