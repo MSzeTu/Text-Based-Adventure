@@ -322,5 +322,16 @@ namespace Text_Based_Adventure
             input = input.Trim().ToUpper();
             return input;
         }
+        //Prevents errors when no input is entered without changing the case of the input
+        public static string AntiEmptyC(string input)
+        {
+            while (string.IsNullOrEmpty(input) == true)
+            {
+                Console.WriteLine("You did not enter anything. Please enter SOMETHING at all.");
+                input = Console.ReadLine();
+            }
+            input = input.Trim();
+            return input;
+        }
     }
 }

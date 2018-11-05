@@ -106,5 +106,60 @@ namespace Text_Based_Adventure
                 Console.WriteLine(i);
             }
         }
+        //Collects user food input and stuff wow
+        public static void UserFoodInput()
+        {
+            string Food;
+            String MoreFood;
+            Boolean Continue = true;
+            Console.WriteLine("We would like to collect some more information from you to better tailor this game.");
+            Console.WriteLine("Please enter a food item.");
+            Food = Console.ReadLine();
+            Food = Config.AntiEmptyC(Food);
+            Program.UserFood.Add(Food);
+            Console.WriteLine("Would you like to enter another food item? [Y] or [N].");
+            MoreFood = Console.ReadLine().Trim().ToUpper();
+            MoreFood = Config.AntiEmpty(MoreFood);
+            MoreFood = MoreFood.Substring(0, 1);
+            while (MoreFood != "N" && MoreFood != "Y")
+            {
+                Console.WriteLine("Please enter Y or N.");
+                MoreFood = Console.ReadLine().Trim().ToUpper();
+                MoreFood = Config.AntiEmpty(MoreFood);
+            }
+            if (MoreFood == "N")
+            {
+                Console.WriteLine("Okay, we'll stop here.");
+                Continue = false;
+            }
+            while (Continue == true)
+            {
+                Console.WriteLine("Please enter a food item.");
+                Food = Console.ReadLine();
+                Food = Config.AntiEmptyC(Food);
+                Program.UserFood.Add(Food);
+                Console.WriteLine("Would you like to enter another food item? [Y] or [N].");
+                MoreFood = Console.ReadLine().Trim().ToUpper();
+                MoreFood = Config.AntiEmpty(MoreFood);
+                MoreFood = MoreFood.Substring(0, 1);
+                while (MoreFood != "N" && MoreFood != "Y")
+                {
+                    Console.WriteLine("Please enter Y or N.");
+                    MoreFood = Console.ReadLine().Trim().ToUpper();
+                    MoreFood = Config.AntiEmpty(MoreFood);
+                }
+                if (MoreFood == "N")
+                {
+                    Console.WriteLine("Okay, we'll stop here.");
+                    Continue = false;
+                }
+            }
+            Console.WriteLine("You have entered the following food items:");
+            foreach (string F in Program.UserFood)
+            {
+                Console.WriteLine(F);
+            }
+
+        }
 	}
 }

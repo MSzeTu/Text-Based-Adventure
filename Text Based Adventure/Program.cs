@@ -13,6 +13,8 @@ namespace Text_Based_Adventure
 {
 	class Program
 	{
+        //Food list
+        public static List<string> UserFood = new List<string>();
         //Setup Playername attribute
         public static int ASize = 10;
 		public static String PlayerName = "Lazy";
@@ -32,6 +34,7 @@ namespace Text_Based_Adventure
 				//Begin Main process
 				PlayerName = Setup.Welcome();
                 Setup.CollectInput();
+                Setup.UserFoodInput();
 				Setup.Intro();
 				Walk1.ExploreWalk();
                 //allows returning to walkway
