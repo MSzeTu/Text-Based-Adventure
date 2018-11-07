@@ -333,5 +333,15 @@ namespace Text_Based_Adventure
             input = input.Trim();
             return input;
         }
+
+        //Random Generator that goes from 0 to where we want it to go
+        public static int RandomG(int limit)
+        {
+            int Returned;
+            Random Gen = new Random();
+            Returned = Gen.Next(0, limit);
+            return Returned;
+
+        }
     }
 }
