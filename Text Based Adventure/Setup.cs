@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-/*Name: SzeTu-HW8
+/*Name: SzeTu-HW9
  * Class: IGME105
  * Author: Matthew Sze-Tu
  * Purpose: Sets up the text-based adventure
- * Recent Changes: Created new method to collect input and store in Array
+ * Recent Changes: Added List wow
  */
 namespace Text_Based_Adventure
 {

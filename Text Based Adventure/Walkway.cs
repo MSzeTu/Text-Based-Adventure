@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-/*Name: SzeTu-HW8
+/*Name: SzeTu-HW9
  * Class: IGME105
  * Author: Matthew Sze-Tu
  * Purpose: Initial walkway of text-based adventure
- * Recent Changes: Tells player if they overshot the door
+ * Recent Changes: No Changes
  */
 namespace Text_Based_Adventure
 {

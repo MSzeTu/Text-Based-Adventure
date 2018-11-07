@@ -1,9 +1,9 @@
 ﻿using System;
-/*Name: SzeTu-HW8
+/*Name: SzeTu-HW9
  * Class: IGME105
  * Author: Matthew Sze-Tu
  * Purpose: Configure method of text-based adventure
- * Recent Changes: Set HatSquid variables to randomly selected Array Value
+ * Recent Changes: Added ANOTHER Dice Roll Method
  */
 namespace Text_Based_Adventure
 {
