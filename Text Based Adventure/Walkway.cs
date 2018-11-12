@@ -87,7 +87,7 @@ namespace Text_Based_Adventure
 			int roll2;
 			int total;
 
-			Console.WriteLine("There is a note on the door that says the following: \nDear " + Program.PlayerName + ", The gate is locked and I lost the key. Please find it.");
+			Console.WriteLine("There is a note on the door that says the following: \nDear " + Setup.PlayerName + ", The gate is locked and I lost the key. Please find it.");
 			Console.WriteLine("Press Enter to roll for finding the key,\n you must roll above a 4 to open the door.");
 			Console.ReadLine();
 			//Roll Dice

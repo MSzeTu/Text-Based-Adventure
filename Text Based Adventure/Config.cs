@@ -52,7 +52,7 @@ namespace Text_Based_Adventure
 			{
 				case 1:
 					{
-						Console.WriteLine(Program.PlayerName + " spends the rest of their life as a loyal servant to the Great Hatsquid.");
+						Console.WriteLine(Setup.PlayerName + " spends the rest of their life as a loyal servant to the Great Hatsquid.");
 						Console.WriteLine("It's a pretty good job, full benefits, good pay, free dental, delicious meals.");
 						Console.WriteLine("Eventually, they rise up to be Hatsquid's 1st Tentacle Man, and from this position, \nhelp Hatsquid conquer the entire world.");
 						Console.WriteLine("This yields a new age of peace and prosperity that lasts until the end of all time.");
@@ -69,7 +69,7 @@ namespace Text_Based_Adventure
 						Console.WriteLine("You float off away from the tower, reflecting on your journey along the way.");
 						Console.WriteLine("Eventually you're dropped off at a lovely hotel in Hawaii. How kind of The Great Hatsquid!");
 						Console.WriteLine("You spend the rest of your life in Hawaii, and get to witness The Great Hatsquid conquer the entire world.");
-						Console.WriteLine("Congratulations!"+Program.PlayerName+" has won!");
+						Console.WriteLine("Congratulations!"+Setup.PlayerName+" has won!");
 						//Prevents looping
 						Console.WriteLine("Press enter to close the game.");
 						Console.ReadLine();
@@ -83,7 +83,7 @@ namespace Text_Based_Adventure
 						SnakeEater();
 						Console.WriteLine("You finally reach the bottom of the ladder. Wasn't that a lovely song?");
 						Console.WriteLine("Satisified with your journey that you gained nothing from, you head home.");
-						Console.WriteLine("Congratulations!"+Program.PlayerName + " has won!");
+						Console.WriteLine("Congratulations!"+Setup.PlayerName + " has won!");
 						//Prevents looping
 						Console.WriteLine("Press enter to close the game.");
 						Console.ReadLine();
@@ -119,7 +119,7 @@ namespace Text_Based_Adventure
 						Console.WriteLine("The door falls forwards and you are squashed flat.");
 						Console.ReadLine();
 						Console.WriteLine("The bridge beneath you then breaks, and the gators in the moat enjoy a nice meal!");
-						Console.WriteLine(Program.PlayerName + "'s adventure ends here, eaten by gators.");
+						Console.WriteLine(Setup.PlayerName + "'s adventure ends here, eaten by gators.");
 						Console.WriteLine("Press any key to close the program.");
 						Console.ReadLine();
 						Environment.Exit(0);
@@ -129,7 +129,7 @@ namespace Text_Based_Adventure
 					{
 						Console.WriteLine("The Duncesquid explodes violently, turning everything in a 500 foot radius into a fine, purple ash.");
 						Console.WriteLine("This, of course, includes you. Maybe next time don't be such a jerk?");
-						Console.WriteLine(Program.PlayerName + "'s adventure ends here, blown up by the DunceSquid.");
+						Console.WriteLine(Setup.PlayerName + "'s adventure ends here, blown up by the DunceSquid.");
 						Console.WriteLine("Press any key to close the program.");
 						Console.ReadLine();
 						Environment.Exit(0);
@@ -140,7 +140,7 @@ namespace Text_Based_Adventure
 						Console.WriteLine("The SupremeSquid jumps away from you, looking very angry. \nYou try to apologize, but it's too late.");
 						Console.WriteLine("The SupremeSquid writes a diss track about you. Before you know it, hordes of rapid teenagers are mad at you.");
 						Console.WriteLine("You're shamed everywhere you go. The world has no safe havens anymore.");
-						Console.WriteLine(Program.PlayerName + "'s adventure ends here, game-ended by the SupremeSquid's youtube fame.");
+						Console.WriteLine(Setup.PlayerName + "'s adventure ends here, game-ended by the SupremeSquid's youtube fame.");
 						Console.WriteLine("Press any key to close the program.");
 						Console.ReadLine();
 						Environment.Exit(0);
@@ -151,7 +151,7 @@ namespace Text_Based_Adventure
 						Console.WriteLine("You eat the cookie. It's delicious!");
 						Console.WriteLine("It's also poisoned. You die. Painfully.");
 						Console.WriteLine("You really shouldn't eat random food you find lying around.");
-						Console.WriteLine(Program.PlayerName + "'s adventure ends here, killed by a poisonus cookie.");
+						Console.WriteLine(Setup.PlayerName + "'s adventure ends here, killed by a poisonus cookie.");
 						Console.WriteLine("Press any key to close the program.");
 						Console.ReadLine();
 						Environment.Exit(0);
@@ -162,7 +162,7 @@ namespace Text_Based_Adventure
 						Console.WriteLine("The room begins to shrink around you.");
 						Console.WriteLine("You try to curl into a ball and take up as little space as possible, but it doesn't help.");
 						Console.WriteLine("Eventually the room closes around you, crushing you completely.");
-						Console.WriteLine(Program.PlayerName + "'s adventure ends here, every bone in their body crushed by the shrinking room.");
+						Console.WriteLine(Setup.PlayerName + "'s adventure ends here, every bone in their body crushed by the shrinking room.");
 						Console.WriteLine("Press any key to close the program.");
 						Console.ReadLine();
 						Environment.Exit(0);
@@ -178,7 +178,7 @@ namespace Text_Based_Adventure
 						Console.WriteLine("Only to be met with nothingness.");
 						Console.WriteLine("You turn around, but theres nothing. All around you is nothing. No color, no light, no sound.");
 						Console.WriteLine("Welcome to the void! Enjoy your stay!");
-						Console.WriteLine(Program.PlayerName + "'s adventure ends here, trapped in the endless void.");
+						Console.WriteLine(Setup.PlayerName + "'s adventure ends here, trapped in the endless void.");
 						Console.WriteLine("Press any key to close the program.");
 						Console.ReadLine();
 						Environment.Exit(0);
@@ -197,7 +197,7 @@ namespace Text_Based_Adventure
 						Console.WriteLine("And you fall. And you fall. And you fall. And you fall. And you fall.");
 						Console.WriteLine("And you fall. And you fall. And you fall. And you fall. And you fall.");
 						Console.WriteLine("And you fall. And you fall. And you fall. And you fall. And you fall.");
-						Console.WriteLine(Program.PlayerName + "'s adventure ends here, they're still falling.");
+						Console.WriteLine(Setup.PlayerName + "'s adventure ends here, they're still falling.");
 						Console.WriteLine("Press any key to close the program.");
 						Console.ReadLine();
 						Environment.Exit(0);
@@ -209,7 +209,7 @@ namespace Text_Based_Adventure
 						Console.WriteLine("Unfortunately, everyone is equal, and men are no stronger or more resiliant than anyone else.");
 						Console.WriteLine("A giant schoolbus flies through the air and slams into your head, knocking it clean off your body.");
 						Console.WriteLine("Your body then falls into the pit. I have no idea where your head ended up.");
-						Console.WriteLine(Program.PlayerName + "'s adventure ends here, killed by HatSquid's schoolbus.");
+						Console.WriteLine(Setup.PlayerName + "'s adventure ends here, killed by HatSquid's schoolbus.");
 						Console.WriteLine("Press any key to close the program.");
 						Console.ReadLine();
 						Environment.Exit(0);
@@ -219,7 +219,7 @@ namespace Text_Based_Adventure
 					{
 						Console.WriteLine("Turns out, Darkness doesn't like being cursed very much. You really hurt it's feelings.");
 						Console.WriteLine("Have you ever heard the phrase 'The Darkness was suffocating?' \nBecause this Darkness is, and it's not a pleasent experience for you.");
-						Console.WriteLine(Program.PlayerName + "'s adventure ends here, literally suffocated by Darkness. They were rude anyways so it's okay.");
+						Console.WriteLine(Setup.PlayerName + "'s adventure ends here, literally suffocated by Darkness. They were rude anyways so it's okay.");
 						Console.WriteLine("Press any key to close the program.");
 						Console.ReadLine();
 						Environment.Exit(0);
@@ -230,7 +230,7 @@ namespace Text_Based_Adventure
 						Console.WriteLine("Unfortunately, The Great Hatsquid decides he's not a huge fan of someone demanding things of him.");
 						Console.WriteLine("He taps his cane on the ground twice, and before you can blink you're surronded by multiple copies of The Great Hatsquid.");
 						Console.WriteLine("Each one grabs hold of one of your limbs, and what follows is not very pleasent.");
-						Console.WriteLine(Program.PlayerName + "'s adventure ends here. torn to pieces by The Great Hatsquid.");
+						Console.WriteLine(Setup.PlayerName + "'s adventure ends here. torn to pieces by The Great Hatsquid.");
 						Console.WriteLine("Their body parts made some lovely decorations for his tower, though!");
 						Console.WriteLine("Press any key to close the program.");
 						Console.ReadLine();

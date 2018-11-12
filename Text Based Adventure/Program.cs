@@ -17,7 +17,6 @@ namespace Text_Based_Adventure
         public static List<string> UserFood = new List<string>();
         //Setup Playername attribute
         public static int ASize = 10;
-		public static String PlayerName = "Lazy";
 		public static Boolean Reset = true;
         public static int[] TentacleNum = new int[ASize];
         //Run main program
@@ -31,8 +30,8 @@ namespace Text_Based_Adventure
 			while (Reset == true)
 			{
 				Tower Tower1 = new Tower();
-				//Begin Main process
-				PlayerName = Setup.Welcome();
+                //Begin Main process
+                Setup.PlayerName = Setup.Welcome();
                 Setup.CollectInput();
                 Setup.UserFoodInput();
 				Setup.Intro();

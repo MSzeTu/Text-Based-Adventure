@@ -11,11 +11,22 @@ using System.Threading.Tasks;
  */
 namespace Text_Based_Adventure
 {
+
     class Setup
     {
-        /*
-         * Welcome the player to the game, have them enter their name. 
-         */
+        private static string playername = "Lazy";
+
+        public static string PlayerName
+        {
+            get
+            {
+                return playername;
+            }
+            set
+            {
+                playername = value;
+            }
+        }
         public static string Welcome()
         {
             String TempName;
@@ -25,7 +36,7 @@ namespace Text_Based_Adventure
             Console.Write("Please enter your name.");
             //Remove empty space from name
             TempName = Console.ReadLine().Trim();
-            TempName = Config.AntiEmpty(TempName);
+            TempName = Config.AntiEmptyC(TempName);
             return TempName;
         }
 
@@ -64,7 +75,7 @@ namespace Text_Based_Adventure
             Console.BackgroundColor = ConsoleColor.DarkMagenta;
             Console.ForegroundColor = ConsoleColor.Cyan;
             //Provide opening narration/instructions
-            Console.WriteLine("You, the brave adventurer " + Program.PlayerName + ", are on an adventure.");
+            Console.WriteLine("You, the brave adventurer " + playername + ", are on an adventure.");
             Console.WriteLine("\nThe Great and Wonderful HatSquid has created a Great and Wonderful Tower,");
             Console.Write("and it is up to you to explore it and discover what secrets it holds, \nthen get out safely.");
             Console.WriteLine("\nGood Luck!");
@@ -89,14 +100,14 @@ namespace Text_Based_Adventure
                 {
                     CanParse = false;
                     while (CanParse == false)
-                    {                       
+                    {
                         Console.WriteLine("You did not enter a valid number");
                         Console.WriteLine("Please enter a number between 10 and 100.");
                         SChoice = Console.ReadLine();
                         SChoice = Config.AntiEmpty(SChoice);
                         CanParse = int.TryParse(SChoice, out Choice);
                     }
-                    
+
                 }
                 Program.TentacleNum[i] = Choice;
             }
@@ -161,5 +172,5 @@ namespace Text_Based_Adventure
             }
 
         }
-	}
+    }
 }
