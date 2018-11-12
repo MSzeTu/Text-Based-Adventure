@@ -3,22 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-/*Name: SzeTu-HW9
+/*Name: SzeTu-HW10
  * Class: IGME105
  * Author: Matthew Sze-Tu
  * Purpose: Create a text-based adventure
- * Recent Changes: Added UserFood List
+ * Recent Changes: Moved attributes to Setup
  */
 namespace Text_Based_Adventure
 {
 	class Program
 	{
-        //Food list
-        public static List<string> UserFood = new List<string>();
-        //Setup Playername attribute
-        public static int ASize = 10;
+        
+        
 		public static Boolean Reset = true;
-        public static int[] TentacleNum = new int[ASize];
+        
         //Run main program
 		static void Main(string[] args)
 		{

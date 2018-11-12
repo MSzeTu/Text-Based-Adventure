@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-/*Name: SzeTu-HW9
+/*Name: SzeTu-HW10
  * Class: IGME105
  * Author: Matthew Sze-Tu
  * Purpose: Initial walkway of text-based adventure
@@ -13,6 +13,7 @@ namespace Text_Based_Adventure
 {
 	class Walkway
 	{
+		String LastName;
 		Config Config = new Config();
         //Ground Map
         //Gate
@@ -29,7 +30,13 @@ namespace Text_Based_Adventure
             //Path and step variables
             const int PATH_DISTANCE = 50;
             String StepsTaken;
-            //Begin Path
+			//Begin Path
+			Console.WriteLine("Hm now that I think of it, you probably have a last name don't you?");
+			Console.WriteLine("Alright then, what's your last name?");
+			LastName=Console.ReadLine();
+			LastName = Config.AntiEmptyC(LastName);
+			Console.WriteLine(LastName + " huh?");
+			Setup.PlayerName = Setup.PlayerName + " " + LastName;
             Console.WriteLine("You stand at the start of a dirt path. \nIn the distance you can see the looming silhouette of HatSquid's Great and Wonderful Tower");
             Console.Write("How many steps would you like to take down the path?");
             StepsTaken = Console.ReadLine();

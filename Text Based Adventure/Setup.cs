@@ -3,20 +3,51 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-/*Name: SzeTu-HW9
+/*Name: SzeTu-HW10
  * Class: IGME105
  * Author: Matthew Sze-Tu
  * Purpose: Sets up the text-based adventure
- * Recent Changes: Added List wow
+ * Recent Changes: Accesors and stuff that's really handy
  */
 namespace Text_Based_Adventure
 {
 
     class Setup
     {
-        private static string playername = "Lazy";
+		//Various variables needed throughout the program
+		private static List<string> userfood = new List<string>();
+		private static string playername = "Lazy";
+		private static int ASize = 10;
+		private static int[] tentaclenum = new int[ASize];
 
-        public static string PlayerName
+		//Gets and sets the Food List Array
+		public static List<string> UserFood
+		{
+			get
+			{
+				return userfood;
+			}
+			set
+			{
+				userfood = value;
+			}
+		}
+
+		//Gets and Sets the UserNum Input array
+		public static int[] TentacleNum
+		{
+			get
+			{
+				return tentaclenum;
+			}
+			set
+			{
+				tentaclenum = value;
+			}
+		}
+
+		//Gets and Sets PlayerName
+		public static string PlayerName
         {
             get
             {
@@ -90,9 +121,9 @@ namespace Text_Based_Adventure
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("I am now going to collect some data from you to personalize your experience.");
             Console.WriteLine("You will have to enter 10 numbers. Please ensure each number is between 10 and 100.");
-            for (int i = 0; i < Program.ASize; i++)
+            for (int i = 0; i < ASize; i++)
             {
-                Console.WriteLine("Please enter a number between 10 and 100. You have entered " + i + " out of " + Program.ASize + " numbers.");
+                Console.WriteLine("Please enter a number between 10 and 100. You have entered " + i + " out of " + ASize + " numbers.");
                 SChoice = Console.ReadLine();
                 SChoice = Config.AntiEmpty(SChoice);
                 CanParse = int.TryParse(SChoice, out Choice);
@@ -109,10 +140,10 @@ namespace Text_Based_Adventure
                     }
 
                 }
-                Program.TentacleNum[i] = Choice;
+                Setup.TentacleNum[i] = Choice;
             }
             Console.WriteLine("Thank you for entering numbers! You have chosen:");
-            foreach (int i in Program.TentacleNum)
+            foreach (int i in Setup.TentacleNum)
             {
                 Console.WriteLine(i);
             }
@@ -127,7 +158,7 @@ namespace Text_Based_Adventure
             Console.WriteLine("Please enter a food item.");
             Food = Console.ReadLine();
             Food = Config.AntiEmptyC(Food);
-            Program.UserFood.Add(Food);
+            UserFood.Add(Food);
             Console.WriteLine("Would you like to enter another food item? [Y] or [N].");
             MoreFood = Console.ReadLine().Trim().ToUpper();
             MoreFood = Config.AntiEmpty(MoreFood);
@@ -148,7 +179,7 @@ namespace Text_Based_Adventure
                 Console.WriteLine("Please enter a food item.");
                 Food = Console.ReadLine();
                 Food = Config.AntiEmptyC(Food);
-                Program.UserFood.Add(Food);
+                UserFood.Add(Food);
                 Console.WriteLine("Would you like to enter another food item? [Y] or [N].");
                 MoreFood = Console.ReadLine().Trim().ToUpper();
                 MoreFood = Config.AntiEmpty(MoreFood);
@@ -166,7 +197,7 @@ namespace Text_Based_Adventure
                 }
             }
             Console.WriteLine("You have entered the following food items:");
-            foreach (string F in Program.UserFood)
+            foreach (string F in UserFood)
             {
                 Console.WriteLine(F);
             }

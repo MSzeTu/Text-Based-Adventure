@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-/*Name: SzeTu-HW9
+/*Name: SzeTu-HW10
  * Class: IGME105
  * Author: Matthew Sze-Tu
  * Purpose: Main tower of text-based adventure
- * Recent Changes: Added Food to the kitchen
+ * Recent Changes: No changes
  */
 namespace Text_Based_Adventure
 {
@@ -216,7 +216,7 @@ namespace Text_Based_Adventure
 		//Kitchen Room
 		public void Kitchen()
 		{
-            int FoodChoice = Config.RandomG(Program.UserFood.Count());
+            int FoodChoice = Config.RandomG(Setup.UserFood.Count());
 			Console.WriteLine("You stupidly grab the flaming handle of the kitchen door. Lucky for you, it feels perfectly fine. \nYou turn the handle and enter the room.");
 			Console.WriteLine("You find yourself in a perfectly normal kitchen, aside from the fact that everything is on fire. \nYou are also on fire, but it's apparently not a problem.");
 			Console.WriteLine("There's a lovely stone counter in here with various kitchen utensils. They are, of course on fire. \nEverything is on fire.");
@@ -227,19 +227,19 @@ namespace Text_Based_Adventure
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Press enter to look around in a little more detail.");
 			Console.ReadLine();
-            Console.WriteLine("Way up on a shelf you can see "+Program.UserFood[FoodChoice]);
+            Console.WriteLine("Way up on a shelf you can see "+Setup.UserFood[FoodChoice]);
             Console.WriteLine("As expected, it's on fire. Still looks good though!");
             System.Threading.Thread.Sleep(1000);
-            FoodChoice = Config.RandomG(Program.UserFood.Count());
+            FoodChoice = Config.RandomG(Setup.UserFood.Count());
             Console.WriteLine("Press enter to look around in even more detail.");
             Console.ReadLine();
-            Console.WriteLine("Over next to the burning sink is "+Program.UserFood[FoodChoice]);
+            Console.WriteLine("Over next to the burning sink is "+Setup.UserFood[FoodChoice]);
             Console.WriteLine("It's actually not on fire. \nNo wait, that was just a trick of the light, it's burning.");
             System.Threading.Thread.Sleep(1000);
-            FoodChoice = Config.RandomG(Program.UserFood.Count());
+            FoodChoice = Config.RandomG(Setup.UserFood.Count());
             Console.WriteLine("Press enter to open the flaming fridge and see what it contains.");
             Console.ReadLine();
-            Console.WriteLine("There's only one item of food in the fridge, a " + Program.UserFood[FoodChoice]);
+            Console.WriteLine("There's only one item of food in the fridge, a " + Setup.UserFood[FoodChoice]);
             Console.WriteLine("It's on fire. Why is there even a fridge? Does it keep the fire cool? That makes no sense!");
             Console.WriteLine("Press enter to leave this flaming room of fire.");
             Console.ReadLine();
