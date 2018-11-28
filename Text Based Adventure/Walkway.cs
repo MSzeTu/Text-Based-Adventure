@@ -13,7 +13,7 @@ namespace Text_Based_Adventure
 {
 	class Walkway
 	{
-		String LastName;
+		private String LastName;
 		Config Config = new Config();
         //Ground Map
         //Gate

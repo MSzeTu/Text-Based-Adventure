@@ -14,14 +14,104 @@ namespace Text_Based_Adventure
 	class MiniHatSquid
 	{
 		//Attributes for Hatsquid
-		public int[] AHealth = { 1,5,50,90,10000,41,8,21,60,666};
-        public int Health;
-		public String Hat;
-		public String[] AAccesories = {"a Lolipop","a Water Gun","a miniature star","lots of swords","tiny clones of itself","diamonds and other jewels","fire. Just actually fire","a deck of cards","a mirror","nothing"};
-        public String Accesories;
-        public String[] AMood = { "dumb","self-Centered","smart","angry","sad","wistful","lustful","greedy","hungry","sleepy"};
-        public String Mood;
-        public int TentacleNum;
+		private int[] ahealth = { 1,5,50,90,10000,41,8,21,60,666};
+        private int health;
+		private String hat;
+		private String[] aaccesories = {"a Lolipop","a Water Gun","a miniature star","lots of swords","tiny clones of itself","diamonds and other jewels","fire. Just actually fire","a deck of cards","a mirror","nothing"};
+        private String accesories;
+        private String[] amood = { "dumb","self-Centered","smart","angry","sad","wistful","lustful","greedy","hungry","sleepy"};
+        private String mood;
+        private int tentaclenum;
+
+		//Gets and sets Health
+		public string Hat
+		{
+			get
+			{
+				return hat;
+			}
+			set
+			{
+				hat = value;
+			}
+		}
+
+		//Gets AHealth
+		public int[] AHealth
+		{
+			get
+			{
+				return ahealth;
+			}
+		}
+		//Gets and sets Health
+		public int Health
+		{
+			get
+			{
+				return health;
+			}
+			set
+			{
+				health = value;
+			}
+		}
+		//Gets AAccesories
+		public string[] AAccesories
+		{
+			get
+			{
+				return aaccesories;
+			}
+		}
+		//Gets and sets Accesories
+		public string Accesories
+		{
+			get
+			{
+				return accesories;
+			}
+
+			set
+			{
+				accesories = value;
+			}
+		}
+
+		//gets and sets AMood
+		public string[] AMood
+		{
+			get
+			{
+				return amood;
+			}
+		}
+		//Gets and sets Mood
+		public string Mood
+		{
+			get
+			{
+				return mood;
+			}
+
+			set
+			{
+				mood = value;
+			}
+		}
+
+		//Gets and sets TentacleNum
+		public int TentacleNum
+		{
+			get
+			{
+				return tentaclenum;
+			}
+			set
+			{
+				tentaclenum = value;
+			}
+		}
 		//MiniHatSquid Descriptions
 		/*SupremeSquid
 			Wearing a Supreme Brand Flat-Brimmed Cap
