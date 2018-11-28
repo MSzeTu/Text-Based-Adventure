@@ -3,13 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+/*Name: SzeTu-HW11
+ * Class: IGME105
+ * Author: Matthew Sze-Tu
+ * Purpose: Child of HatSquid
+ * Recent Changes: created
+ */
 namespace Text_Based_Adventure
 {
     //Class for PirateSquid
     public class PirateSquid : HatSquid
     {
         string HatName = "PirateSquid";
+		//Returns Squid Name
         public override string ReturnName()
         {
             return HatName;

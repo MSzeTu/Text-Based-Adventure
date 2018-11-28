@@ -1,9 +1,9 @@
 ﻿using System;
-/*Name: SzeTu-HW10
+/*Name: SzeTu-HW11
  * Class: IGME105
  * Author: Matthew Sze-Tu
  * Purpose: Configure method of text-based adventure
- * Recent Changes: No Changes
+ * Recent Changes: New death by HatSquid
  */
 namespace Text_Based_Adventure
 {

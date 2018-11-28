@@ -42,7 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Creatures.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="DapperBird.cs" />
     <Compile Include="Dungeon.cs" />

@@ -3,7 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+/*Name: SzeTu-HW11
+ * Class: IGME105
+ * Author: Matthew Sze-Tu
+ * Purpose: Sets up the text-based adventure
+ * Recent Changes: Child of HatSquid
+ */
 namespace Text_Based_Adventure
 {
     //Class for VikingSquid
@@ -11,6 +16,7 @@ namespace Text_Based_Adventure
     {
 
         string HatName = "VikingSquid";
+		//Returns HatSquid name
         public override string ReturnName()
         {
             return HatName;

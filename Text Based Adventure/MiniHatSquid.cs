@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-/*Name: SzeTu-HW10
+/*Name: SzeTu-HW11
  * Class: IGME105
  * Author: Matthew Sze-Tu
  * Purpose: Miniature HatSquids
- * Recent Changes: No Changes
+ * Recent Changes: Made ALL the attributes private
  */
 namespace Text_Based_Adventure
 {
