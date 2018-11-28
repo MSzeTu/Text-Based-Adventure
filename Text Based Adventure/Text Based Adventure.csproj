@@ -44,12 +44,17 @@
   <ItemGroup>
     <Compile Include="Creatures.cs" />
     <Compile Include="Config.cs" />
+    <Compile Include="DapperBird.cs" />
     <Compile Include="Dungeon.cs" />
+    <Compile Include="FancyAlligator.cs" />
+    <Compile Include="HatSquid.cs" />
     <Compile Include="MiniHatSquid.cs" />
+    <Compile Include="PirateSquid.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="Tower.cs" />
+    <Compile Include="VikingSquid.cs" />
     <Compile Include="Walkway.cs" />
   </ItemGroup>
   <ItemGroup>

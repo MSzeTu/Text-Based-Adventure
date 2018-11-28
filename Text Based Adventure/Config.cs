@@ -247,6 +247,16 @@ namespace Text_Based_Adventure
                         Console.ForegroundColor = ConsoleColor.Cyan;
                         break;
 					}
+                case 12:
+                    {
+                        Console.WriteLine("The Squid's attack brutally murders you");
+                        Console.WriteLine("Wow that really hurt. Maybe you should have asked for consent.");
+                        Console.WriteLine(Setup.PlayerName + "'s adventure ends here, murdered for being inconsiderate.");                       
+                        Console.WriteLine("Press any key to close the program.");
+                        Console.ReadLine();
+                        Environment.Exit(0);
+                        break;
+                    }
 				//error message
 				default:
 					{
