@@ -89,7 +89,8 @@ namespace Text_Based_Adventure
         public void DungeonRoomTwo()
         {
             int ChooseCreature = Config.DiceRoll(1, 3);
-            HatSquid Squid = new VikingSquid();
+			HatSquid Squid;
+			Squid = new VikingSquid();
             if (ChooseCreature == 2)
             {
                 Squid = new PirateSquid();
